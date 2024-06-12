@@ -1,0 +1,8 @@
+Deploy Grafana Agent Flow on Kubernetes
+$ helm repo add grafana https://grafana.github.io/helm-charts
+$ helm repo update
+$ kubectl create namespace <NAMESPACE>
+$ helm install --namespace <NAMESPACE> <RELEASE_NAME> grafana/grafana-agent
+if you want to change you can get the https://raw.githubusercontent.com/grafana/agent/main/operations/helm/charts/grafana-agent/values.yaml file 
+$ helm upgrade --namespace <NAMESPACE> <RELEASE_NAME> grafana/grafana-agent -f <VALUES_PATH>
+And we can create the seprate configmap 
