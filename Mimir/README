@@ -6,3 +6,13 @@ $ helm install --namespace <NAMESPACE> <RELEASE_NAME> grafana/grafana-agent
 if you want to change you can get the https://raw.githubusercontent.com/grafana/agent/main/operations/helm/charts/grafana-agent/values.yaml file 
 $ helm upgrade --namespace <NAMESPACE> <RELEASE_NAME> grafana/grafana-agent -f <VALUES_PATH>
 And we can create the seprate configmap 
+
+----------------------------------------------
+MIMIR
+---------------------------------------------
+
+
+
+---------------------------------------------------
+helm install --namespace mimir grafana-agent  grafana/grafana-agent -f grafana-agent.yml
+helm upgrade --install --namespace mimir grafana-agent  grafana/grafana-agent -f grafana-agent.yml
