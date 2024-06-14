@@ -16,3 +16,11 @@ MIMIR
 ---------------------------------------------------
 helm install --namespace mimir grafana-agent  grafana/grafana-agent -f grafana-agent.yml
 helm upgrade --install --namespace mimir grafana-agent  grafana/grafana-agent -f grafana-agent.yml
+helm upgrade --install mimir grafana/mimir-distributed -n mimir -f mimir.yml
+kubectl get crds | grep monitoring.grafana.com
+ helm install grafana-agent-operator grafana/grafana-agent-operator  -n mimir
+
+----------------------------
+ helm delete grafana-agent-operator grafana/grafana-agent-operator  -n mimir
+helm delete --namespace mimir grafana-agent  grafana/grafana-agent 
+helm delete mimir grafana/mimir-distributed -n mimir
