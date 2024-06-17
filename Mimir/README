@@ -24,3 +24,4 @@ kubectl get crds | grep monitoring.grafana.com
  helm delete grafana-agent-operator grafana/grafana-agent-operator  -n mimir
 helm delete --namespace mimir grafana-agent  grafana/grafana-agent 
 helm delete mimir grafana/mimir-distributed -n mimir
+kubectl rollout restart daemoset/grafana-agent -n mimir 
