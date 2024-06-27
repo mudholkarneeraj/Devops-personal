@@ -1,0 +1,176 @@
+———————————————————————————————————————————————————————————
+Kubernetes
+———————————————————————————————————————————————————————————- ==>
+StatefulSets:
+* StatefulSets are used for managing stateful applications, where each pod in the set has a unique, persistent identity.
+* They are commonly used for applications that require stable network identities or persistent storage, such as databases.
+* StatefulSets provide guarantees about the ordering and uniqueness of pods, making it easier to manage stateful applications.
+
+Deployments:
+* Deployments are used for managing stateless applications, where each pod is interchangeable and can be replaced at any time.
+* They are suitable for applications that don't store persistent data locally and can scale horizontally by adding or removing replicas.
+=================================
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: namespace-name
+  labels:
+    name: namespace-name
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: application-name-deployment
+  namespace: namespace-name
+  labels:
+    app: application-name
+spec:
+  replicas: instancesPlaceholder
+  selector:
+    matchLabels:
+      app: application-name
+  strategy:
+    rollingUpdate:
+      maxSurge: instancesPlaceholder
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: application-name
+    spec:
+      containers:
+        - name: application-name
+          image: aws-account-id.dkr.ecr.ap-south-1.amazonaws.com/application-name:aws-ecr-image-tag
+          ports:
+            - name: user-port
+              containerPort: portPlaceholder
+          livenessProbe:
+            httpGet:
+              path: /healthCheck
+              port: portPlaceholder
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 15
+          readinessProbe:
+            httpGet:
+              path: /healthCheck
+              port: portPlaceholder
+            initialDelaySeconds: 30
+            periodSeconds: 5
+            successThreshold: 1
+            failureThreshold: 24
+          resources:
+            requests:
+              memory: memPlaceholder
+              cpu: cpuPlaceholder
+            limits:
+              memory: memLimitPlaceholder
+              cpu: cpuLimitPlaceholder
+          env:
+            - name: DD_API_KEY
+              value: "e8ea279c02faf5aff0f964807bca0edd"
+            - name: DD_APM_ENABLED
+              value: "true"
+            - name: DD_DOGSTATSD_TAGS
+              value: "env:prod"
+            - name: DD_ENV
+              value: "prod"
+            - name: DD_EXPVAR_PORT
+              value: "3000"
+            - name: DD_PROCESS_AGENT_ENABLED
+              value: "true"
+            - name: DD_SERVICE
+              value: "prod_env"
+            - name: DD_SYSTEM_PROBE_ENABLED
+              value: "true"
+            - name: DD_SYSTEM_PROBE_EXTERNAL
+              value: "true"
+            - name: ECS_FARGATE
+              value: "true"
+            - name: VAULT_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: common-service-secret
+                  key: VAULT_TOKEN
+            - name: ACTIVE_PROFILE
+              valueFrom:
+                secretKeyRef:
+                  name: common-service-secret
+                  key: ACTIVE_PROFILE
+            - name: VAULT_URL
+              valueFrom:
+                secretKeyRef:
+                  name: common-service-secret
+                  key: VAULT_URL
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: application-name-service
+  namespace: namespace-name
+  annotations:
+    prometheus.io/path: "/actuator/prometheus"
+    prometheus.io/port: "5000"
+    prometheus.io/scrape: "true"
+spec:
+  type: NodePort
+  selector:
+    app: application-name
+  ports:
+    - protocol: TCP
+      port: portPlaceholder
+      targetPort: portPlaceholder
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: application-name-hpa
+  namespace: namespace-name
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: application-name-deployment
+  minReplicas: minReplicasPlaceholder
+  maxReplicas: maxReplicasPlaceholder
+  #targetCPUUtilizationPercentage: 90
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 40
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 50
+
+===================================================== Liveness Probe:
+* A liveness probe determines whether a container is running and healthy. If the liveness probe fails, Kubernetes restarts the container.
+* It is used to ensure that the application is responsive and functioning correctly during its lifecycle.
+Readiness Probe:
+* A readiness probe determines whether a container is ready to handle traffic. If the readiness probe fails, the container is removed from the service's endpoints until it becomes ready again.
+* It is used to avoid sending traffic to a container that is not yet ready to serve requests, preventing disruptions during application scaling or updates.
+Startup Probe:
+* A startup probe is used to determine when a container is ready to receive traffic. It differs from the readiness probe in that it only runs during the initial startup of a container.
+* Once the startup probe succeeds, the readiness probe takes over to monitor ongoing readiness.
+Persistent Volume Claim (PVC):
+* A Persistent Volume Claim (PVC) is a request for storage by a user or a Pod. It is used to consume the storage defined by a Persistent Volume.
+* PVCs are created by users (or automatically by controllers) to request a specific amount of storage with certain access modes (e.g., ReadWriteOnce, ReadOnlyMany, ReadWriteMany).
+* When a PVC is created, it binds to an available PV that meets the requirements specified in the claim.
+Persistent Volume (PV):
+* A Persistent Volume (PV) is a piece of storage in the cluster that has been provisioned by an administrator or dynamically created using Storage Classes.
+* PVs are resources in the cluster that represent physical or networked storage, such as a disk on a node or a network-attached storage device.
+* They exist independently of any particular Pod and are provisioned and managed outside of the Pod lifecycle.
+* PVs define access modes (e.g., ReadWriteOnce, ReadOnlyMany, ReadWriteMany) 
