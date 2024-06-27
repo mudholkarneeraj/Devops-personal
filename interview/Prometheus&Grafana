@@ -1,0 +1,30 @@
+=====================
+Prometheus:
+=======================
+Data Model:
+* Prometheus uses a multi-dimensional data model with time-series data identified by metric names and key-value pairs.
+* Each time-series consists of a metric name, a set of key-value pairs (labels), and the actual time-series data points.
+Query Language (PromQL):
+* PromQL is a powerful query language used to retrieve and process data from Prometheus.
+Alerting Rules:
+* Prometheus includes a built-in alerting system with alerting rules defined in its configuration.
+Federation:
+* Federation enables multiple Prometheus servers to work together in a hierarchical manner, allowing for scalable and distributed monitoring.
+Exporters:
+* Prometheus exporters are small applications that expose metrics in a format Prometheus can understand. They are used to monitor services or components that do not natively expose Prometheus metrics.
+Chunks:
+* To optimize storage and query performance, Prometheus organizes samples into chunks.
+* Chunks are compressed blocks of data that contain a range of samples for a specific time-series.
+* Prometheus uses a technique called chunk encoding to efficiently store and retrieve chunks of time-series data.
+WAL (Write-Ahead Log):
+* Prometheus uses a Write-Ahead Log (WAL) to ensure data durability and recoverability in case of failures.
+* The WAL captures incoming samples before they are written to the main storage, providing a reliable mechanism to recover data in the event of a crash or restart.
+In summary, Prometheus organizes time-series data using a multi-dimensional data model, where each time-series is uniquely identified by its metric name and a set of labels. The data is stored as samples in chunks, and the retention period, along with the WAL, ensures efficient storage, querying, and durability of historical data.
+Remote Storage Solutions:
+    * Utilize remote storage solutions that are designed for long-term data retention. Popular choices include:
+    * Thanos: Thanos is an open-source project that extends Prometheus with long-term storage capabilities. It allows you to store and query Prometheus data across multiple Prometheus instances and provides features like downsampling and deduplication.
+    * Cortex: Cortex is another open-source project that extends Prometheus for scalability and long-term storage. It is horizontally scalable and supports remote storage backends like Amazon S3 or Google Cloud Storage. 
+=================
+Grafana:
+=================
+Grafana is an open-source platform for monitoring and observability, providing a flexible and powerful toolset for creating and managing dashboards, visualizing data, and alerting on anomalies. Here's a summary of key points about Grafana:
