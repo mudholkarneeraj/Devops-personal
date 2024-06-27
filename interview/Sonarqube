@@ -1,0 +1,11 @@
+===========================
+SonarQube
+===========================
+SonarQube is an open-source platform for continuous inspection of code quality. It provides static code analysis to identify bugs, security vulnerabilities, and code smells in a wide variety of programming languages. SonarQube helps development teams maintain and improve the overall quality of their codebase by offering insights into code issues and suggesting improvements. Here are some key features and aspects of SonarQube:
+Code Analysis:
+* It supports multiple programming languages, including Java, JavaScript, C#, Python, Ruby, and many others.
+Quality Gates:
+* Quality Gates in SonarQube define a set of conditions that must be met before code is considered for deployment or further development.
+Integration with CI/CD:
+* SonarQube integrates seamlessly with Continuous Integration (CI) and Continuous Deployment (CD) pipelines, providing automated code quality checks as part of the development workflow.
+========================================
