@@ -1,0 +1,18 @@
+=================================
+
+-Ps ux command user for find status of process.
+-Free command is useful for checking memory status.
+-To debug a shell script we execute the script with the “-x” or “-nv”  option.
+-$! Shows process id of the process that recently went into background 
+-$$  gives the process id of the currently executing process
+-“finger” command shows all information of users.
+-Crontab stands for cron table because it uses the job scheduler cron to execute tasks. The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. 
+-	•	dfspace: It is used to check the free disk space in terms of MB.
+-to open in readonly mode vi –R <Filename>
+-uptime 
+-ssh username@serverIP -p sshport 
+-mysql –S serverName –U username –P password
+-set the default permission to all users on every file which is created in the current shell umask 777
+-insert a line “ABCD” at every 50th line of a file sed  '50i\ABCD' filename 
+-find the total disk space used by a specific user du -s /home/username 
+-How to print the login names of all users on a system /etc/shadow file has all the users listed.  awk –F ':' '{print $1}' /etc/shadow|uniq –u
