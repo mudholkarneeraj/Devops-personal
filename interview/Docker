@@ -1,0 +1,17 @@
+* ==================================
+DOCKER
+====================================
+* FROM specifies the base image for your Docker image. It is the starting point for building your image.
+RUN:
+* RUN is used to execute commands during the image build process. It is often used for installing software or performing other setup tasks.
+MAINTAINER:
+* MAINTAINER is used to specify the name and email address of the person maintaining the Dockerfile.
+CMD:
+* CMD sets the default command to be executed when a container is run from the image. It can be overridden when starting a container.
+ENTRYPOINT:
+* ENTRYPOINT sets the primary command that will be run when the container starts. It is often used to define the main application process.
+ADD:
+* ADD is a more powerful instruction that not only copies files but also has additional features. It can also fetch files from remote URLs and extract tar archives.
+* While ADD can be more versatile, it is often advised to use COPY for simple file copying to maintain clarity and avoid unexpected behavior.
+COPY:
+* COPY is a straightforward and simple instruction used to copy files or directories from the build context into the image.
