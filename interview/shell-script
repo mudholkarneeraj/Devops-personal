@@ -1,0 +1,137 @@
+————————————————
+SCRIPT
+—————————————————
+-Interpreter translates the program line by line into machine code.
+-Compiler scans the whole program and converts it into machine code.
+-Shell is a program and command line interpreter. It is an interface between user and kernel.
+—/bin/bash is the default login shell. Using the command  “chsh” we can change the default shell.
+-	•	Zombie: The process has stopped but it is still active in process table
+-BASH commands are case sensitive but DOS commands are not case sensitive.
+-Head command is used for display started 10 lines
+-Tail command is used for display started 10 lines
+-$echo $SHELL command is used for find current shell.
+-Cat /etc/shells command is used to find available shells in your system.
+-Deleting the original file does not affect the hard link but Deleting the original file makes the soft link inactive.
+- $# It represents the total number of arguments passed by string.
+-$* consider the entire set of positional parameters as a single string, but $@ treat each quoted argument as a separate argument.
+-== is used for string comparison.
+-check if a directory exists?
+#!/bin/sh
+if [ -d $mydir ]
+then
+  echo "Directory exists"
+fi
+-r – read 4
+w – write 2
+e – execute 1
+-awk '{print $3}' $1 ==>  3rd element/column from each line from a file?
+-Write down the Syntax for all the loops in Shell Scripting.
+-----------------
+For Loop:
+-----------------
+for var in word1 word2 ... wordn
+do
+  Statement(s) to be executed for every word.
+done
+-------------
+While Loop:
+--------------
+while command
+do
+  Statement(s) to be executed if command is true
+Done
+--------------
+Until Loop:
+----------------
+until command
+do
+Statement(s) to be executed until command is true
+done
+--------------------
+-script to check if a file exists on the system?
+If [-f /var/www/html]
+Then 
+  Echo “file exists”
+Fi
+-#!/bin/sh or #!/bin/bash at the beginning of every script?
+----------------------------------
+That line tells which shell to use. 
+-From given file name find the count of lines containing word  “ABC” ==> grep –c “ABC” filename
+-script to compare numbers?
+#!/bin/bash
+X=10
+Y=20
+If [ $x –gt $y ]
+Then 
+Echo “ x is greater than y”
+Else 
+Echo “y is greater than x”
+Fi
+----------------
+-types of permission at the file level in Shell?
+Owner permissions: The permissions granted to a user with all the rights at the root level.
+Group permissions: The permissions granted to a user with all the rights in a particular group.
+Other  permissions: The permissions granted to a user with all the rights globally to a file.
+-Write a script that receive input from user.
+#! /bin/bash
+Echo  –n  “enter input:”
+read input
+echo “ you entered: $input”
+----------------------
+-Write a script using the AND operator.
+#! /bin/bash
+Echo –n “enter number:”
+read number
+if  [[ ($number  –lt 10 )  && ($number%2  –eq  0)]]
+  echo  “even number”
+else 
+  echo “odd number”
+fi
+----------------------------
+-Write an example of OR operator.
+#! /bin/bash
+Echo –n “enter any number : “
+read n
+if  [[ ( $n –eq 10 || $n  -eq 45) ]]
+then 
+  echo “ you win”
+else  
+  echo “ you lost!”
+fi
+---------------------------
+-Write a script for adding multiple values.
+#! /bin/bash
+Sum=0
+For (( counter=1 ; counter<5 ;counter++))
+Do
+  Echo –n “enter your number”
+read n
+(( sum+=n))
+#echo –n “$counter”
+Done 
+Printf   “\n”
+echo  “result is : $ sum”
+-----------------------------------------
+-Write an example of a function.
+#! /bin/bash 
+Function Add()
+{
+echo  –n “enter number:”
+read a
+echo  –n  “enter 2nd number :”
+read b
+echo “addition  is: $((  a+b ))”
+}
+Add
+---------------------------------
+-How to send mail using shell script?
+#! /bin/bash
+Recipientadmin@example.com
+Subject=”script”
+Message=”this mail send by script”
+‘mail –s $subject $recipient <<< $message’
+—What is a shell? 
+A shell is a command-line interpreter between either a user or an application and the operating system’s kernel. The kernel manages and controls access to the computer’s resources and hardware. The shell is a layer on top of the kernel that communicates with the kernel to send commands to the hardware. 
+—What is a shell script? 
+A shell script is simply a series of shell commands in a plain text file executed sequentially to accomplish a task. 
+————————————————
