@@ -1,0 +1,25 @@
+——————————
+AWS
+—————————— S3 Bucket Types:
+* Standard Storage:
+    * The default storage class for S3.
+    * Designed for frequently accessed data with low latency and high throughput.
+    * Provides high durability and availability.
+* Intelligent-Tiering:
+    * Automatically moves objects between two access tiers (frequent and infrequent access) based on changing access patterns.
+    * Optimizes costs for data with unknown or changing access patterns.
+* One Zone-Infrequent Access (Z-IA):
+    * Stores data in a single availability zone.
+    * Offers cost savings compared to standard storage, but with lower durability (99.5%).
+* 		Glacier Storage Classes:
+    * Designed for archiving and long-term storage with low retrieval frequency.
+    * Data is stored in Glacier, a low-cost storage service with longer retrieval times. Glacier (S3 Glacier):
+        * For data archiving with retrieval times ranging from minutes to hours.
+        * Suitable for scenarios where data retrieval speed is less critical.
+    * Glacier Deep Archive (S3 Glacier Deep Archive):
+        * For long-term data archiving with retrieval times ranging from 12 to 48 hours.
+        * Lowest-cost storage option but with the longest retrieval times.
+* 		Reduced Redundancy Storage (deprecated):
+    * Originally designed for non-critical, reproducible data.
+    * Deprecated, and users are encouraged to use the Standard storage class or Intelligent-Tiering instead.
+==> EC2 enables users to run virtual servers, known as instances, on-demand
