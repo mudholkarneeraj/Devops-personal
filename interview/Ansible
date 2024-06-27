@@ -1,0 +1,50 @@
+Ansible:
+———————————————————
+Ansible is an open-source automation tool designed for configuration management, application deployment, task automation, and orchestration. It simplifies complex IT tasks, enabling users to define and manage infrastructure as code. Ansible uses a declarative language to describe the desired state of systems, and it works over SSH, eliminating the need for agent installation on managed nodes.
+Ansible Playbooks:
+* A playbook in Ansible is a YAML file containing a series of plays, where each play defines a set of tasks to be executed on a set of hosts.
+* Plays consist of tasks, which are individual units of work, and each task maps to an Ansible module.
+* Playbooks are written in YAML and are easy to read and write, making them human-readable and shareable.
+* Playbooks can include variables, conditionals, and loops to make them flexible and dynamic.
+* They are designed to orchestrate complex tasks and configurations on remote hosts.
+Ansible Roles:
+* An Ansible role is a way to organize and structure playbooks. It provides a means of dividing responsibilities and reusing code.
+* Roles encapsulate functionality in a structured format, including tasks, variables, handlers, and templates.
+* Roles have a predefined directory structure, making it easy to organize and share roles across projects.
+* They can be used to define common patterns and configurations, promoting code reuse and maintainability.
+* Roles can be included in playbooks, allowing for better organization and abstraction of complex configurations.
+Example of an Ansible role directory structure: my_role/
+├── tasks/
+│   └── main.yml
+├── handlers/
+│   └── main.yml
+├── defaults/
+│   └── main.yml
+├── templates/
+│   └── my_template.j2
+├── vars/
+│   └── main.yml
+└── meta/
+    └── main.yml
+==========================
+
+$ansible-playbook -i inventory.ini my_playbook.yml --check
+==> Ansible inventory file means /etc/hosts [webservers]
+web1.example.com
+web2.example.com
+
+[databases]
+db1.example.com
+db2.example.com $ansible-playbook -i /path/to/dynamic_inventory_script my_playbook.yml
+command Module:
+* The command module is a simple and direct way to run a command on a remote host.
+* It does not invoke a shell to execute the command. Instead, it runs the command directly.
+* Because it doesn't use a shell, certain shell-specific features (e.g., pipes, redirects, wildcards, variables) are not interpreted, limiting its capabilities.
+- name: Run a simple command
+  command: echo "Hello” 
+shell Module:
+* The shell module, on the other hand, invokes a shell (such as /bin/sh or /bin/bash) to execute the command on the remote host.
+* This allows the use of shell features, such as pipes, redirects, and variable interpolation, providing more flexibility.
+- name: Run a command with shell features
+  shell: echo "Hello, {{ variable }}"
+Use the shell module when you need to use shell-specific syntax, variables, or complex command constructs.
