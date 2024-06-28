@@ -135,3 +135,30 @@ A shell is a command-line interpreter between either a user or an application 
 —What is a shell script? 
 A shell script is simply a series of shell commands in a plain text file executed sequentially to accomplish a task. 
 ————————————————
+You can use test or [ ] to evaluate conditions. The conditions can be related to numbers, strings, or file types.
+
+Numeric Comparisons:
+
+-eq: equal to
+-ne: not equal to
+-lt: less than
+-le: less than or equal to
+-gt: greater than
+-ge: greater than or equal to
+String Comparisons:
+
+=: equal to
+!=: not equal to
+-z: string is null (has zero length)
+-n: string is not null (has non-zero length)
+File Conditions:
+
+-e: file exists
+-r: file is readable
+-w: file is writable
+-x: file is executable
+-d: directory exists
+-f: file exists and is a regular file
+-s: file is not empty
+
+------------------------------------
