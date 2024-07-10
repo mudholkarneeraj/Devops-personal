@@ -16,3 +16,7 @@
 -insert a line “ABCD” at every 50th line of a file sed  '50i\ABCD' filename 
 -find the total disk space used by a specific user du -s /home/username 
 -How to print the login names of all users on a system /etc/shadow file has all the users listed.  awk –F ':' '{print $1}' /etc/shadow|uniq –u
+-tar -czvf my_archive.tar test1.txt test2.txt test3.txt ==> to create the tar file
+-tar -xvf my_archive.tar ==> to extract the tar file
+-zip <file_name> ==> to zip the file
+-unzip <file_name> ==> to unzip the file
