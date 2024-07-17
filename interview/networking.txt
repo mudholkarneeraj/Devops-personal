@@ -1,3 +1,5 @@
+https://www.freecodecamp.org/news/subnet-cheat-sheet-24-subnet-mask-30-26-27-29-and-other-ip-address-cidr-network-references/
+
 CIDR	SUBNET MASK	WILDCARD MASK	# OF IP ADDRESSES	# OF USABLE IP ADDRESSES
 /32	255.255.255.255	0.0.0.0	1	1
 /31	255.255.255.254	0.0.0.1	2	2*
