@@ -48,3 +48,14 @@ shell Module:
 - name: Run a command with shell features
   shell: echo "Hello, {{ variable }}"
 Use the shell module when you need to use shell-specific syntax, variables, or complex command constructs.
+------------------------
+---
+- name: Example playbook with a conditional
+  hosts: all
+  vars:
+    myvar: "foo"
+  tasks:
+    - name: Task 1
+      debug:
+        msg: "This task will always run"
+-------------------------------
