@@ -48,5 +48,5 @@ AWS policy
     ]
 }
 ================================================
-
+sudo teleport start --config="/etc/teleport.yaml"
 
