@@ -69,10 +69,43 @@
         • (must know)A /AAAA / CNAME / NS
         • (advanced)CAA/DS/MX/NAPTR/PTR/SOA/TXT/SPF/SRV
     • A – maps a hostname to IPv4
-• AAAA – maps a hostname to IPv6
-• CNAME – maps a hostname to another hostname
-• The target is a domain name which must have an A or AAAA record
-• Can’t create a CNAME record for the top node of a DNS namespace (Zone Apex)
-• Example: you can’t create for example.com, but you can create for www.example.com
-• NS – Name Servers for the Hosted Zone
-• Control how traffic is routed for a domain
+    • AAAA – maps a hostname to IPv6
+    • CNAME – maps a hostname to another hostname
+    • The target is a domain name which must have an A or AAAA record
+    • Can’t create a CNAME record for the top node of a DNS namespace (Zone Apex)
+    • Example: you can’t create for example.com, but you can create for www.example.com
+    • NS – Name Servers for the Hosted Zone
+    • Control how traffic is routed for a domain
+18. Elastic Beanstalk: Elastic Beanstalk is a developer centric view of deploying an application on AWS, • It uses all the component’s we’ve seen before: EC2, ASG, ELB, RDS, ...
+    • Automatically handles capacity provisioning, load balancing, scaling, application health monitoring, instance configuration, ...
+    • Just the application code is the responsibility of the developer
+    • Beanstalk is free but you pay for the underlying instances
+19. Amazon S3 Use cases: Buckets must have a globally unique name, S3 looks like a global service but buckets are created in a region, 5TB object storage, 
+        • Backup and storage
+        • Disaster Recovery
+        • Archive
+        • Hybrid Cloud storage • Application hosting
+        • Media hosting
+        • Data lakes & big data analytics • Software delivery
+        • Static website
+20. Amazon S3 – Static Website Hosting
+        • S3 can host static websites and have them accessible on the Internet,  If you get a 403 Forbidden error, make sure the bucket policy allows public reads!
+21. S3 Storage Classes: 
+        • Amazon S3 Standard - General Purpose : Big Data analytics, mobile & gaming applications, content distribution...
+        • Amazon S3 Standard-Infrequent Access (IA) • Amazon S3 One Zone-Infrequent Access:  For data that is less frequently accessed, but requires rapid access when needed
+                    • Lower cost than S3 Standard
+        • Amazon S3 Glacier Instant Retrieval: • Low-cost object storage meant for archiving / backup
+                                                • Pricing: price for storage + object retrieval cost
+                                                • Millisecond retrieval, great for data accessed once a quarter 
+                                                • Minimum storage duration of 90 days
+        • Amazon S3 Glacier Flexible Retrieval
+        • Amazon S3 Glacier Deep Archive: • Standard (12 hours), Bulk (48 hours)
+                                            • Minimum storage duration of 180 days
+        • Amazon S3 Intelligent Tiering
+22. • Can move between classes manually or using S3 Lifecycle configurations
+23. Amazon S3 – Moving between Storage Classes:
+        • You can transition objects between storage classes
+        • For infrequently accessed object, move them to Standard IA
+        • For archive objects that you don’t need fast access to, move them to Glacier or Glacier Deep Archive
+        • Moving objects can be automated using a Lifecycle Rules
+
