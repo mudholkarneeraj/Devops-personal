@@ -108,4 +108,12 @@
         • For infrequently accessed object, move them to Standard IA
         • For archive objects that you don’t need fast access to, move them to Glacier or Glacier Deep Archive
         • Moving objects can be automated using a Lifecycle Rules
+24: Your application can achieve at least 3,500 PUT/COPY/POST/DELETE or 5,500 GET/HEAD requests per second per prefix in a bucket.
+25: S3Transfer Acceleration:
+    • Increase transfer speed by transferring file to an AWS edge location which will forward the data to the S3 bucket in the target region
+26: • If a client makes a cross-origin request on our S3 bucket, we need to enable the correct CORS headers
+27: Amazon S3 – Pre-Signed URLs: • Generate pre-signed URLs using the S3 Console, AWS CLI or SDK
+            • S3 Console – 1 min up to 720 mins (12 hours)
+            • AWS CLI – configure expiration with --expires-in parameter in seconds (default 3600 secs, max. 604800 secs ~ 168 hours)
+            • Users given a pre-signed URL inherit the permissions of the user that generated the URL for GET / PUT
 
