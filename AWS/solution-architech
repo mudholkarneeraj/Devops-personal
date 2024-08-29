@@ -116,4 +116,13 @@
             • S3 Console – 1 min up to 720 mins (12 hours)
             • AWS CLI – configure expiration with --expires-in parameter in seconds (default 3600 secs, max. 604800 secs ~ 168 hours)
             • Users given a pre-signed URL inherit the permissions of the user that generated the URL for GET / PUT
+28. CloudFront: • Improves read performance, content is cached at the edge, 216 Point of Presence globally
+                • DDoS protection (because worldwide), integration with Shield, AWS Web Application Firewall
+        origin: S3 bucket: For distributing files and caching them at the edge,CloudFront can be used as an ingress
+         Custom Origin (HTTP)
+            • Application Load Balancer
+            • EC2 instance
+            • S3 website (must first enable the bucket as a static S3 website)
+            • Any HTTP backend you want
+
 
