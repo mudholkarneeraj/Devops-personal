@@ -124,5 +124,52 @@
             • EC2 instance
             • S3 website (must first enable the bucket as a static S3 website)
             • Any HTTP backend you want
-
-
+            • S3 website (must first enable the bucket as a static S3 website)
+            • Any HTTP backend you want
+29. CloudFront Geo Restriction: • You can restrict who can access your distribution
+30. CloudFront – Cache Invalidations: In case you update the back-end origin, CloudFront doesn’t know about it and will only get the refreshed content after the TTL has expired, You can invalidate all files (*) or a special path (/images/*)
+31: Unicast IP vs Anycast IP: 
+        • Unicast IP: one server holds one IP address
+        • Anycast IP: all servers hold the same IP address and the client is routed to the nearest one
+32. AWS Global Accelerator vs CloudFront:
+        • CloudFront
+            • Improves performance for both cacheable content (such as images and videos)
+            • Dynamiccontent(suchasAPIaccelerationanddynamicsitedelivery) • Content is served at the edge
+        • Global Accelerator
+            • ImprovesperformanceforawiderangeofapplicationsoverTCPorUDP
+            • Proxying packets at the edge to applications running in one or more AWS Regions.
+            • Goodfitfornon-HTTPusecases,suchasgaming(UDP),IoT(MQTT),orVoiceoverIP • Good for HTTP use cases that require static IP addresses
+            • GoodforHTTPusecasesthatrequireddeterministic,fastregionalfailover
+33. AWS Snow Family: Highly-secure, portable devices to collect and process data at the edge, and migrate data into and out of AWS
+    • Physical data transport solution:moveTBs or PBs of data in or out of AWS
+34. AWS Storage Gateway: • Bridge between on-premises data and cloud data
+    • Types of Storage Gateway:
+        • S3 File Gateway
+        • FSx File Gateway
+        • Volume Gateway
+        • Tape Gateway
+35. AWS Transfer Family: A fully-managed service for file transfers into and out of Amazon S3 or Amazon EFS using the FTP protocol
+        • Supported Protocols
+        • AWS Transfer for FTP (File Transfer Protocol (FTP))
+        • AWS Transfer for FTPS (File Transfer Protocol over SSL (FTPS)) • AWS Transfer for SFTP (Secure File Transfer Protocol (SFTP))
+36. AWS DataSync: Transfer between AWS storage services
+37. Storage Comparison:
+        • S3: Object Storage
+        • S3Glacier:ObjectArchival
+        • EBS volumes: Network storage for one EC2 instance at a time
+        • Instance Storage: Physical storage for your EC2 instance (high IOPS)
+        • EFS: Network File System for Linux instances, POSIX filesystem
+        • FSx for Windows: Network File System for Windows servers
+        • FSx for Lustre: High Performance Computing Linux file system
+        • FSx for NetApp ONTAP: High OS Compatibility
+        • FSx for OpenZFS: Managed ZFS file system
+        • Storage Gateway: S3 & FSx File Gateway,Volume Gateway (cache & stored),Tape Gateway • Transfer Family: FTP, FTPS, SFTP interface on top of Amazon S3 or Amazon EFS
+        • DataSync:Scheduledatasyncfromon-premisestoAWS,orAWStoAWS
+        • Snowcone / Snowball / Snowmobile: to move large amount of data to the cloud, physically • Database: for specific workloads, usually with indexing and querying
+38. AWS Integration & Messaging:
+        Amazon SQS – Standard Queue:
+        • Fully managed service, used to decouple applications
+        • Attributes:
+            • Unlimited throughput, unlimited number of messages in queue
+            • Default retention of messages: 4 days, maximum of 14 days • Low latency (<10 ms on publish and receive)
+            • Limitation of 256KB per message sent
