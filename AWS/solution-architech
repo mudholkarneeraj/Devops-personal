@@ -173,3 +173,69 @@
             • Unlimited throughput, unlimited number of messages in queue
             • Default retention of messages: 4 days, maximum of 14 days • Low latency (<10 ms on publish and receive)
             • Limitation of 256KB per message sent
+        SQS: By default, the “message visibility timeout” is 30 seconds, • That means the message has 30 seconds to be processed
+            • After the message visibility timeout is over, the message is “visible” in SQS
+            • If a message is not processed within the visibility timeout, it will be processed twice 
+            • A consumer could call the ChangeMessageVisibility API to get more time
+            • If visibility timeout is high (hours), and consumer crashes, re-processing will take time 
+            • If visibility timeout is too low (seconds), we may get duplicates
+        Long Polling: When a consumer requests messages from the queue, it can optionally “wait” for messages to arrive if there are none in the queue
+        FIFO Queue: • Limited throughput: 300 msg/s without batching, 3000 msg/s with
+39. Amazon SNS – How to publish
+        • Topic Publish (using the SDK) 
+        • Create a topic
+        • Create a subscription (or many)
+        • Publish to the topic
+     Direct Publish (for mobile apps SDK)
+        • Create a platform application
+        • Create a platform endpoint
+        • Publish to the platform endpoint
+        • Works with Google GCM, Apple APNS, Amazon ADM...
+40. If you want to send the same S3 event to many SQS queues, use fan-out
+41. SNS – Message Filtering: • JSON policy used to filter messages sent to SNS topic’s subscriptions
+                                • If a subscription doesn’t have a filter policy, it receives every message
+42. Kinesis Overview: • Makes it easy to collect, process, and analyze streaming data in real-time
+                        • Ingest real-time data such as: Application logs, Metrics, Website clickstreams, IoT telemetry data...
+                        • Kinesis Data Streams: capture, process, and store data streams, Retention between 1 day to 365 days
+                                Capacity Modes: • Provisioned mode, • On-demand mode:
+                        • Kinesis Data Firehose: load data streams into AWS data stores
+                        • Kinesis Data Analytics: analyze data streams with SQL or Apache Flink
+                        • Kinesis Video Streams: capture, process, and store video streams
+43. Kinesis Data Streams vs Firehose:
+    Kinesis Data Streams:
+        • Streaming ser vice for ingest at scale
+        • Write custom code (producer / consumer)
+        • Real-time (~200 ms)
+        • Manage scaling (shard splitting / merging)
+        • Data storage for 1 to 365 days
+        • Supports replay capability
+    Kinesis Data Firehose:
+        • Load streaming data into S3 / Redshift / OpenSearch / 3rd party / custom HTTP
+        • Fully managed
+        • Near real-time
+        • Automatic scaling
+        • No data storage
+        • Doesn’t support replay capability
+44.Amazon MQ
+        • SQS, SNS are “cloud-native” services: proprietary protocols from AWS
+        • Traditional applications running from on-premises may use open protocols such as:MQTT,AMQP,STOMP,Openwire,WSS
+        • When migrating to the cloud, instead of re-engineering the application to use SQS and SNS, we can use Amazon MQ
+        • Amazon MQ is a managed message broker service for
+45. Amazon ECS – Load Balancer Integrations
+        • Application Load Balancer supported and works for most use cases
+        • Network Load Balancer recommended only for high throughput / high performance use cases, or to pair it with AWS Private Link
+46. Amazon ECS – Data Volumes (EFS)
+        • Mount EFS file systems onto ECS tasks
+        • Works for both EC2 and Fargate launch types
+        • Tasks running in any AZ will share the same data in the EFS file system
+        • Fargate + EFS = Serverless
+47. ECS Service Auto Scaling:
+        • Automatically increase/decrease the desired number of ECS tasks
+        • Amazon ECS Auto Scaling uses AWS Application Auto Scaling • ECSServiceAverageCPUUtilization
+        • ECSServiceAverageMemoryUtilization-ScaleonRAM
+        • ALBRequestCountPerTarget–metriccomingfromtheALB
+        • Target Tracking – scale based on target value for a specific CloudWatch metric 
+        • Step Scaling – scale based on a specified CloudWatch Alarm
+        • Scheduled Scaling – scale based on a specified date/time (predictable changes)
+        • ECS Service Auto Scaling (task level) ≠ EC2 Auto Scaling (EC2 instance level) 
+        • Fargate Auto Scaling is much easier to setup (because Serverless)
