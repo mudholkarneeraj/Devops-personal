@@ -296,3 +296,45 @@
                     • Could manually combine with CloudFront (more control over the caching strategies and the distribution)
                 • Private:
                 • Can only be accessed from your VPC using an interface VPC endpoint (ENI),  Use a resource policy to define access
+55. Amazon Cognito: Give users an identity to interact with our web or mobile application
+        • Cognito User Pools:
+            • Sign in functionality for app users
+            • Integrate with API Gateway & Application Load Balancer
+        
+        • Cognito Identity Pools (Federated Identity):
+            • Provide AWS credentials to users so they can access AWS resources directly • Integrate with Cognito User Pools as an identity provider
+            • Cognito vs IAM: “hundreds of users”, ”mobile users”, “authenticate with SAML”
+        • Create a serverless database of user for your web & mobile apps • Simple login: Username (or email) / password combination
+        • Email & Phone Number Verification
+        • Multi-factor authentication (MFA)
+        • Federated Identities: users from Facebook, Google, SAML...
+56, DatabaseTypes:
+        • RDBMS (= SQL / OLTP): RDS,Aurora – great for joins
+        • NoSQL database – no joins, no SQL : DynamoDB (~JSON), ElastiCache (key / value pairs), Neptune (graphs), DocumentDB (for MongoDB), Keyspaces (for Apache Cassandra)
+        • Object Store: S3 (for big objects) / Glacier (for backups / archives)
+        • Data Warehouse (= SQL Analytics / BI): Redshift (OLAP), Athena, EMR
+        • Search: OpenSearch (JSON) – free text, unstructured searches
+        • Graphs: Amazon Neptune – displays relationships between data
+        • Ledger: Amazon Quantum Ledger Database
+        • Time series:AmazonTimestream
+57: Amazon DynamoDB – Summary:
+• AWS proprietary technology, managed serverless NoSQL database, millisecond latency
+    • Can replace ElastiCache as a key/value store (storing session data for example, using TTL feature)
+58. Amazon S3 – Summary: 
+• Serverless, scales infinitely, max object size is 5 TB, versioning capability
+• Tiers: S3 Standard, S3 Infrequent Access, S3 Intelligent, S3 Glacier + lifecycle policy
+• Features: Versioning, Encryption, Replication, MFA-Delete, Access Logs...
+• Security: IAM, Bucket Policies, ACL, Access Points, Object Lambda, CORS, Object/Vault Lock • Encryption: SSE-S3, SSE-KMS, SSE-C, client-side,TLS in transit, default encryption
+• Batch operations on objects using S3 Batch, listing files using S3 Inventory
+• Performance:Multi-partupload,S3TransferAcceleration,S3Select
+• Automation: S3 Event Notifications (SNS, SQS, Lambda, EventBridge)
+• Use Cases: static files, key value store for big files, website hosting
+59. DocumentDB:
+• Aurora is an “AWS-implementation” of PostgreSQL / MySQL ...
+• DocumentDB is the same for MongoDB (which is a NoSQL database)
+• MongoDB is used to store, query, and index JSON data
+• Similar “deployment concepts” as Aurora
+• Fully Managed, highly available with replication across 3 AZ
+• DocumentDB storage automatically grows in increments of 10GB
+• Automatically scales to workloads with millions of requests per seconds
+60. Amazon Neptune: • Fully managed graph database
