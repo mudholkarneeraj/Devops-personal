@@ -239,3 +239,60 @@
         • Scheduled Scaling – scale based on a specified date/time (predictable changes)
         • ECS Service Auto Scaling (task level) ≠ EC2 Auto Scaling (EC2 instance level) 
         • Fargate Auto Scaling is much easier to setup (because Serverless)
+48. Amazon EKS: It is a way to launch managed Kubernetes clusters on AWS, Collect logs and metrics using CloudWatch Container Insights
+    Node Types:
+        • Managed Node Groups
+            • Creates and manages Nodes (EC2 instances) for you
+            • Nodes are part of an ASG managed by EKS • Supports On-Demand or Spot Instances
+        • Self-Managed Nodes
+            • Nodes created by you and registered to the EKS cluster and managed by an ASG
+            • You can use prebuilt AMI - Amazon EKS Optimized AMI • Supports On-Demand or Spot Instances
+        • AWS Fargate
+            • No maintenance required; no nodes managed
+50. AWS App Runner:
+        • Fully managed service that makes it easy to deploy web applications and APIs at scale
+        • No infrastructure experience required
+        • Start with your source code or container image
+        • Automatically builds and deploy the web app
+        • Automatic scaling, highly available, load balancer, encryption
+        • VPC access support
+        • Connect to database, cache, and message queue services
+        • Use cases: web apps, APIs, microservices, rapid production deployments
+51. serverless=  Initially... Serverless == FaaS (Function as a Service)
+        Serverless in AWS:
+            • AWS Lambda
+            • DynamoDB
+            • AWS Cognito
+            • AWS API Gateway • Amazon S3
+            • AWS SNS & SQS
+            • AWS Kinesis Data Firehose • Aurora Serverless
+            • Step Functions
+            • Fargate
+52: lambda: • Easy Pricing:
+                • Pay per request and compute time
+                • Free tier of 1,000,000 AWS Lambda requests and 400,000 GBs of compute time
+53: Amazon DynamoDB: Fully managed, highly available with replication across multiple AZs, Scales to massive workloads, distributed database, Fast and consistent in performance
+        • DynamoDB is made of Tables
+        • Each table has a Primary Key (must be decided at creation time) • Each table can have an infinite number of items (= rows)
+        • Each item has attributes (can be added over time – can be null) • Maximum size of an item is 400KB
+        • Data types supported are:
+        • Scalar Types – String, Number, Binary, Boolean, Null • Document Types – List, Map
+        • Set Types – String Set, Number Set, Binary Set
+    DynamoDB – Read/Write Capacity Modes:
+        • Provisioned Mode (default)
+            • You specify the number of reads/writes per second
+            • You need to plan capacity beforehand
+            • Pay for provisioned Read Capacity Units (RCU) & Write Capacity Units (WCU) • Possibility to add auto-scaling mode for RCU & WCU
+        • On-Demand Mode
+            • Read/writes automatically scale up/down with your workloads • No capacity planning needed
+            • Pay for what you use, more expensive ($$$)
+            • Great for unpredictable workloads, steep sudden spikes
+54: AWS API Gateway: • AWS Lambda + API Gateway
+            Endpoint Types: 
+                • Edge-Optimized (default): For global clients
+                    • Requests are routed through the CloudFront Edge locations (improves latency) • The API Gateway still lives in only one region
+                • Regional:
+                    • For clients within the same region
+                    • Could manually combine with CloudFront (more control over the caching strategies and the distribution)
+                • Private:
+                • Can only be accessed from your VPC using an interface VPC endpoint (ENI),  Use a resource policy to define access
