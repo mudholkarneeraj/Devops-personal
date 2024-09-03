@@ -366,3 +366,74 @@
     • With OpenSearch, you can search any field, even par tially matches
     • It’s common to use OpenSearch as a complement to another database • Two modes: managed cluster or serverless cluster
 64. Amazon QuickSight
+    • Serverless machine learning-powered business intelligence service to create interactive dashboards
+    • Fast, automatically scalable, embeddable, with per-session pricing
+    • Use cases:
+    • Business analytics
+    • Building visualizations
+    • Perform ad-hoc analysis
+    • Get business insights using data
+    • Integrated with RDS, Aurora, Athena, Redshift, S3...
+    • In-memory computation using SPICE engine if data is imported into QuickSight
+65. AWS Glue
+    • Managed extract, transform, and load (ETL) service • Useful to prepare and transform data for analytics
+    • Fully serverless service
+66. AWS Lake Formation
+    • Data lake = central place to have all your data for analytics purposes
+    • Fully managed service that makes it easy to setup a data lake in days
+    • Discover, cleanse, transform, and ingest data into your Data Lake
+    • It automates many complex manual steps (collecting, cleansing, moving, cataloging data, ...) and de-duplicate (using ML Transforms)
+67. Amazon Managed Streaming for Apache Kafka (Amazon MSK)
+        • Alternative to Amazon Kinesis
+        • Fully managed Apache Kafka on AWS
+        • Allow you to create, update, delete clusters
+        • MSK creates & manages Kafka brokers nodes & Zookeeper nodes for you • Deploy the MSK cluster in your VPC, multi-AZ (up to 3 for HA)
+        • Automatic recovery from common Apache Kafka failures
+        • Data is stored on EBS volumes for as long as you want
+        • MSK Serverless
+        • Run Apache Kafka on MSK without managing the capacity
+        • MSK automatically provisions resources and scales compute & storage
+68. Amazon Rekognition
+        • Find objects, people, text, scenes in images and videos using ML
+        • Facial analysis and facial search to do user verification, people counting • Create a database of “familiar faces” or compare against celebrities
+        • Detect content that is inappropriate, unwanted, or offensive (image and videos)
+        • Used in social media, broadcast media, advertising, and e-commerce situations to create a safer user experience
+69. Amazon Transcribe
+        • Automatically convert speech to text
+        • Uses a deep learning process called automatic speech recognition (ASR) to convert speech to text quickly and accurately
+        • Automatically remove Personally Identifiable Information (PII) using Redaction
+        • Supports Automatic Language Identification for multi-lingual audio
+        • Use cases:
+        • transcribe customer service calls
+        • automate closed captioning and subtitling
+        • generate metadata for media assets to create a fully searchable archive
+70. Amazon Polly
+        • Turn text into lifelike speech using deep learning
+        • Allowing you to create applications that talk
+71. • Amazon Lex: (same technology that powers Alexa)
+        • Automatic Speech Recognition (ASR) to convert speech to text
+        • Natural Language Understanding to recognize the intent of text, callers • Helps build chatbots, call center bots
+    • Amazon Connect:
+        • Receive calls, create contact flows, cloud-based vir tual contact center
+        • Can integrate with other CRM systems or AWS
+        • No upfront payments, 80% cheaper than traditional contact center solutions
+72. Amazon SageMaker
+        • Fully managed service for developers / data scientists to build ML models • Typically, difficult to do all the processes in one place + provision servers
+73. Amazon Kendra
+    • Fully managed document search service powered by Machine Learning
+    • Extract answers from within a document
+74. Amazon Personalize
+    • Fully managed ML-service to build apps with real-time personalized recommendations
+    • Example: personalized product recommendations/re-ranking, customized direct marketing • Example:Userboughtgardeningtools,providerecommendationsonthenextonetobuy
+75. AmazonTextract
+    • Automatically extracts text, handwriting, and data from any scanned documents using AI and ML
+76. AWS Machine Learning - Summary
+• Rekognition: face detection, labeling, celebrity recognition • Transcribe: audio to text (ex: subtitles)
+• Polly: text to audio
+• Translate: translations
+• Lex: build conversational bots – chatbots
+• Connect: cloud contact center
+• Comprehend: natural language processing
+• SageMaker: machine learning for every developer and data scientist • Forecast: build highly accurate forecasts
+• Kendra: ML-powered search engine
+• Personalize: real-time personalized recommendations • Textract: detect text and data in documents
