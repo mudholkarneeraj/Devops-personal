@@ -321,20 +321,48 @@
 • AWS proprietary technology, managed serverless NoSQL database, millisecond latency
     • Can replace ElastiCache as a key/value store (storing session data for example, using TTL feature)
 58. Amazon S3 – Summary: 
-• Serverless, scales infinitely, max object size is 5 TB, versioning capability
-• Tiers: S3 Standard, S3 Infrequent Access, S3 Intelligent, S3 Glacier + lifecycle policy
-• Features: Versioning, Encryption, Replication, MFA-Delete, Access Logs...
-• Security: IAM, Bucket Policies, ACL, Access Points, Object Lambda, CORS, Object/Vault Lock • Encryption: SSE-S3, SSE-KMS, SSE-C, client-side,TLS in transit, default encryption
-• Batch operations on objects using S3 Batch, listing files using S3 Inventory
-• Performance:Multi-partupload,S3TransferAcceleration,S3Select
-• Automation: S3 Event Notifications (SNS, SQS, Lambda, EventBridge)
-• Use Cases: static files, key value store for big files, website hosting
+        • Serverless, scales infinitely, max object size is 5 TB, versioning capability
+        • Tiers: S3 Standard, S3 Infrequent Access, S3 Intelligent, S3 Glacier + lifecycle policy
+        • Features: Versioning, Encryption, Replication, MFA-Delete, Access Logs...
+        • Security: IAM, Bucket Policies, ACL, Access Points, Object Lambda, CORS, Object/Vault Lock • Encryption: SSE-S3, SSE-KMS, SSE-C, client-side,TLS in transit, default encryption
+        • Batch operations on objects using S3 Batch, listing files using S3 Inventory
+        • Performance:Multi-partupload,S3TransferAcceleration,S3Select
+        • Automation: S3 Event Notifications (SNS, SQS, Lambda, EventBridge)
+        • Use Cases: static files, key value store for big files, website hosting
 59. DocumentDB:
-• Aurora is an “AWS-implementation” of PostgreSQL / MySQL ...
-• DocumentDB is the same for MongoDB (which is a NoSQL database)
-• MongoDB is used to store, query, and index JSON data
-• Similar “deployment concepts” as Aurora
-• Fully Managed, highly available with replication across 3 AZ
-• DocumentDB storage automatically grows in increments of 10GB
-• Automatically scales to workloads with millions of requests per seconds
-60. Amazon Neptune: • Fully managed graph database
+        • Aurora is an “AWS-implementation” of PostgreSQL / MySQL ...
+        • DocumentDB is the same for MongoDB (which is a NoSQL database)
+        • MongoDB is used to store, query, and index JSON data
+        • Similar “deployment concepts” as Aurora
+        • Fully Managed, highly available with replication across 3 AZ
+        • DocumentDB storage automatically grows in increments of 10GB
+        • Automatically scales to workloads with millions of requests per seconds
+        60. Amazon Neptune: • Fully managed graph database
+60. Amazon Keyspaces (for Apache Cassandra)
+        • Apache Cassandra is an open-source NoSQL distributed database
+        • A managed Apache Cassandra-compatible database service
+        • Serverless, Scalable, highly available, fully managed by AWS
+        • Automatically scale tables up/down based on the application’s traffic
+        • Tables are replicated 3 times across multiple AZ
+        • Using the Cassandra Query Language (CQL)
+61. Amazon QLDB:
+        • QLDB stands for ”Quantum Ledger Database”
+        • A ledger is a book recording financial transactions
+        • Used to review history of all the changes made to your application data over time
+        • Immutable system: no entry can be removed or modified, cryptographically verifiable
+61. Amazon Athena: 
+    • Serverless query service to analyze data stored in Amazon S3
+    • Uses standard SQL language to query the files (built on Presto)
+    • SupportsCSV,JSON,ORC,Avro,andParquet
+    • Pricing: $5.00 per TB of data scanned
+    • Commonly used with Amazon Quicksight for repor ting/dashboards
+62: Redshift Overview:
+    • Redshift is based on PostgreSQL, but it’s not used for OLTP
+    • It’s OLAP – online analytical processing (analytics and data warehousing)
+    • 10x better performance than other data warehouses, scale to PBs of data
+63. Amazon OpenSearch Service
+    • Amazon OpenSearch is successor to Amazon ElasticSearch
+    • In DynamoDB, queries only exist by primary key or indexes...
+    • With OpenSearch, you can search any field, even par tially matches
+    • It’s common to use OpenSearch as a complement to another database • Two modes: managed cluster or serverless cluster
+64. Amazon QuickSight
