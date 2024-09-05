@@ -667,3 +667,71 @@
         • RouteTables:limitwhichVPCcantalkwithotherVPC
         • Works with Direct Connect Gateway,VPN connections
         • Supports IP Multicast (not supported by any other AWS ser vice)
+106. IPv6:Every IPv6 address in AWS is public and Internet-routable
+        • IPv4 cannot be disabled for your VPC and subnets
+        • You can enable IPv6 (they’re public IP addresses) to operate in dual-stack mode
+        • Your EC2 instances will get at least a private internal IPv4 and a public IPv6
+        • They can communicate using either IPv4 or IPv6 to the internet through an Internet Gateway
+        107. VPC Section Summary (1/3)
+        • CIDR – IP Range
+        • VPC – Virtual Private Cloud => we define a list of IPv4 & IPv6 CIDR
+        • Subnets – tied to an AZ, we define a CIDR
+        • Internet Gateway – at the VPC level, provide IPv4 & IPv6 Internet Access
+        • Route Tables – must be edited to add routes from subnets to the IGW,VPC Peering Connections,VPC Endpoints, ...
+        • Bastion Host – public EC2 instance to SSH into, that has SSH connectivity to EC2 instances in private subnets
+        • NAT Instances – gives Internet access to EC2 instances in private subnets. Old, must be setup in a public subnet, disable Source / Destination check flag
+        • NAT Gateway – managed by AWS, provides scalable Internet access to private EC2 instances, when the target is an IPv4 address
+        • NACL – stateless, subnet rules for inbound and outbound, don’t forget Ephemeral Ports
+        • Security Groups – stateful, operate at the EC2 instance level
+        • VPC Peering – connect two VPCs with non overlapping CIDR, non-transitive
+        • VPC Endpoints – provide private access to AWS Services (S3, DynamoDB, CloudFormation, SSM) within a VPC
+        • VPC Flow Logs – can be setup at the VPC / Subnet / ENI Level, for ACCEPT and REJECT traffic, helps identifying attacks, analyze using Athena or CloudWatch Logs Insights
+        • Site-to-Site VPN – setup a Customer Gateway on DC, a Virtual Private Gateway on VPC, and site-to-site VPN over public Internet
+        • AWS VPN CloudHub – hub-and-spoke VPN model to connect your sites
+        • Direct Connect – setup a Virtual Private Gateway on VPC, and establish a direct private connection to an AWS Direct Connect Location
+        • Direct Connect Gateway – setup a Direct Connect to many VPCs in different AWS regions
+        • AWS PrivateLink / VPC Endpoint Services:
+        • Connect services privately from your service VPC to customers VPC
+        • Doesn’t need VPC Peering, public Internet, NAT Gateway, Route Tables • Must be used with Network Load Balancer & ENI
+        • ClassicLink – connect EC2-Classic EC2 instances privately to your VPC
+        • Transit Gateway – transitive peering connections forVPC,VPN & DX
+        • Traffic Mirroring – copy network traffic from ENIs for further analysis
+        • Egress-only Internet Gateway – like a NAT Gateway, but for IPv6 targets
+108. Networking Costs in AWS per GB:
+        $0.02 Inter-region
+        $0.02 if using Public IP / Elastic IP
+        $0.01 if Using private IP in 1-region
+        Free for traffic in
+        Free if using private IP
+109. Transferring large amount of data into AWS:
+        • Example: transfer 200 TB of data in the cloud. We have a 100 Mbps internet connection.
+        • Over the internet / Site-to-Site VPN:
+        • Immediate to setup
+        • Will take 200(TB)*1000(GB)*1000(MB)*8(Mb)/100 Mbps = 16,000,000s = 185d
+        • Over direct connect 1Gbps:
+        • Long for the one-time setup (over a month)
+        • Will take 200(TB)*1000(GB)*8(Gb)/1 Gbps = 1,600,000s = 18.5d
+        • Over Snowball:
+        • Will take 2 to 3 snowballs in parallel
+        • Takes about 1 week for the end-to-end transfer • Can be combined with DMS
+        • For on-going replication / transfers: Site-to-SiteVPN or DX with DMS or DataSync
+110. Blocking an IP address – with an NLB
+111. Blocking an IP address – ALB + WAF
+112. Blocking an IP address – ALB, CloudFront WAF
+113. What is CloudFormation:
+        • CloudFormation is a declarative way of outlining your AWS Infrastructure, for any resources
+        • Infrastructure as code
+114. Amazon Simple Email Service (Amazon SES)
+        • Fully managed service to send emails securely, globally and at scale
+        • Allows inbound/outbound emails
+        • Reputation dashboard, performance insights, anti-spam feedback
+        • Provides statistics such as email deliveries, bounces, feedback loop results, email open
+        • Supports DomainKeys Identified Mail (DKIM) and Sender Policy Framework (SPF)
+        • Flexible IP deployment: shared, dedicated, and customer-owned IPs
+        • Send emails using your application using AWS Console, APIs, or SMTP
+        • Use cases: transactional, marketing and bulk email communications
+115. SSM Session Manager: Allows you to start a secure shell on your EC2 and on-premises servers
+116. AWS Amplify - web and mobile applications
+        • A set of tools and services that helps you develop and deploy scalable full stack web and mobile applications
+        • Authentication,Storage,API(REST,GraphQL),CI/CD,PubSub,Analytics,AI/MLPredictions, Monitoring, ...
+        • ConnectyoursourcecodefromGitHub,AWSCodeCommit,Bitbucket,GitLab,oruploaddirectly
