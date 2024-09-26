@@ -3,3 +3,4 @@
     crontab -e
     crontab -l
 ---------------------------------------------------------------------
+2. sudo deluser --remove-home user ==> user directory also deleted
