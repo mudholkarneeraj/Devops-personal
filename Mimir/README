@@ -10,7 +10,7 @@ And we can create the seprate configmap
 ----------------------------------------------
 MIMIR
 ---------------------------------------------
-
+helm -n mimir upgrade --install mimir grafana/mimir-distributed --values mimir.yml
 
 
 ---------------------------------------------------
