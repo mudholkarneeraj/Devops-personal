@@ -5,3 +5,5 @@
 ---------------------------------------------------------------------
 2. sudo deluser --remove-home user ==> user directory also deleted
 3. du -h -t 100M /  ==> to check file size
+4. gdu ==> to check the discspace
+
