@@ -3,6 +3,9 @@
     crontab -e
     crontab -l
 2. glances ==> to measure the network socket
+3.  atq   ==> to check running scripts in jenkins
+    at -c <job_id>. ==> to check
+    atrm 1   ==> to remove
 
 ---------------------------------------------------------------------
 2. sudo deluser --remove-home user ==> user directory also deleted
