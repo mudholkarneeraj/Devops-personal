@@ -2,10 +2,33 @@
     systemctl status cron
     crontab -e
     crontab -l
+2. glances ==> to measure the network socket
+
 ---------------------------------------------------------------------
 2. sudo deluser --remove-home user ==> user directory also deleted
 3. sudo adduser <newuser>
 3. du -h -t 100M /  ==> to check file size
 4. gdu ==> to check the discspace
+sudo growpart /dev/nvme0n1 1 ==> to mount ext4
+sudo resize2fs /dev/nvme0n1p1 ==> to mount ext4
+sudo resize2fs /dev/nvme0n1p1
+sudo xfs_growfs -d
+Ss -plant ==> to check port
+sudo resize2fs /dev/nvme0n1p1
+sudo xfs_growfs -d
+sudo xfs_growfs /dev/nvme1n1 
+./restart-instance.sh > /dev/null 2>&1 &
+-------------certboat--------
+sudo certbot certonly --manual -d *.dev.myjar.app -d dev.myjar.app --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
+——————————MAC-RESIZE-----------
+MAC instance resize PDISK=$(diskutil list physical external | head -n1 | cut -d" " -f1)
+APFSCONT=$(diskutil list physical external | grep "Apple_APFS" | tr -s " " | cut -d" " -f8)
+sudo diskutil repairDisk $PDISK
+
+Accept the prompt with "y", then paste this command
+
+sudo diskutil apfs resizeContainer $APFSCONT 0
+Since the EBS volume was resized after boot, an instance reboot is required before the additional disk size is available for your use.
+———————————————————————————————
 
 
