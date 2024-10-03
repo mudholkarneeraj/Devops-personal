@@ -1,0 +1,19 @@
+filebeat.inputs:
+- type: filestream
+  id: "chronos"
+  enabled: true
+  paths:
+  - '/home/ubuntu/chronos/logs/celery-err.log.*'
+  - '/home/ubuntu/chronos/logs/celery-out.log.*'
+  fields:
+    instance_name: "chronos-worker-renewals"
+output.elasticsearch:
+  hosts: ["172.31.82.218"]
+  username: "elastic"
+  password: "C0QOpvu8vBL9T"
+  index: "filebeat-%{[agent.version]}-%{+yyyy.MM.dd}"
+setup.kibana:
+  host: "https://prod-kibana.myjar.app/"
+setup.template.name: "filebeat"
+setup.template.pattern: "filebeat"
+setup.ilm.enabled: false
