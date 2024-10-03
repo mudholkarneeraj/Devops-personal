@@ -2,3 +2,4 @@
 2. kubectl config set-context --current --namespace=kube-system
 3. kubectl --namespace monitoring port-forward $POD_NAME 3000
 4. 
+$ kubectl -n kube-system run my-shell --rm -i --tty --image ubuntu:latest -- /bin/bash
