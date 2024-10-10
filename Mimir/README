@@ -10,10 +10,25 @@ And we can create the seprate configmap
 ----------------------------------------------
 MIMIR
 ---------------------------------------------
+-->The ruler is an optional component that evaluates PromQL expressions defined in recording and alerting rules
+
+----------------
+CMD
+----------------
 helm -n mimir upgrade --install mimir grafana/mimir-distributed --values mimir.yml
 
 
 ---------------------------------------------------
+
+-----------------------------
+ALLOY
+----------------------------
+helm upgrade --install --namespace alloy alloy grafana/alloy
+
+helm delete --namespace alloy  alloy
+
+
+------------------------------
 helm install --namespace mimir grafana-agent  grafana/grafana-agent -f grafana-agent.yml
 helm upgrade --install --namespace mimir grafana-agent  grafana/grafana-agent -f grafana-agent.yml
 helm upgrade --install mimir grafana/mimir-distributed -n mimir -f mimir.yml
