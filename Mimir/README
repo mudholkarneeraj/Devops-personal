@@ -23,6 +23,7 @@ helm -n mimir upgrade --install mimir grafana/mimir-distributed --values mimir.y
 -----------------------------
 ALLOY
 ----------------------------
+https://github.com/grafana/alloy/blob/main/operations/helm/charts/alloy/README.md
 helm upgrade --install --namespace alloy alloy grafana/alloy
 
 helm delete --namespace alloy  alloy
