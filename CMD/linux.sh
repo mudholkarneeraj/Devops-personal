@@ -8,8 +8,20 @@
     atrm 1   ==> to remove
 
 ---------------------------------------------------------------------
-2. sudo deluser --remove-home user ==> user directory also deleted
-3. sudo adduser <newuser>
+cut ==> command is used for extracting a portion
+ifconfig ==> show network interface
+tail -n 3 state.txt or tail -3 state.txt => -n for no. of lines
+grep -i ==> Returns the results for case insensitive strings
+grep -n ==> Returns the matching strings along with their line number
+grep -c ==> Returns the number of lines in which the results matched the search string
+cat -n ==> This adds line numbers to all lines
+sudo useradd <username> ==> Adding a new user ---or---  sudo adduser <newuser>
+sudo passwd <username> ==> Setting a password for the new user
+sudo userdel <username> ==> Deleting the user
+sudo groupadd <groupname> ==> Adding a new group
+sudo groupdel <groupname> ==> Deleting the  group
+sudo usermod -g <groupname> <username> ==> Adding a user to a primary group
+2. sudo deluser --remove-home user ==> user directory also deleted 
 3. du -h -t 100M /  ==> to check file size
 4. gdu ==> to check the discspace
 sudo growpart /dev/nvme0n1 1 ==> to mount ext4
