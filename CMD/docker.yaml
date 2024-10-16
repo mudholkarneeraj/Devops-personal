@@ -1,5 +1,6 @@
 sudo docker-compose logs -f web
 sudo docker systemctl system prune -a
+sudo docker rmi $(sudo docker images -f "dangling=true" -q) --force
 
 ---------dockerfile-------------
 docker build  -f Dockerfile -t make .
