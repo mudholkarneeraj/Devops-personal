@@ -1,0 +1,64 @@
+we need to create the user and role in admin database, and we need to connect user to that role
+--------------------------------------------
+for readonly access we can create this role
+db.updateRole("readonly", {
+  privileges: [
+    {
+      resource: { db: "", collection: "" },
+      actions: [
+        "find",
+        "indexStats",
+        "listCollections",
+        "collStats",
+        "listIndexes"
+      ]
+    },
+    {
+      resource: { anyResource: true },
+      actions: ["collStats", "listCollections", "listIndexes"]
+    },
+    {
+      resource: { cluster: true },
+      actions: [
+        "listChangeStreams",
+        "listCursors",
+        "listDatabases",
+        "top",
+        "hostInfo"
+      ]
+    }
+  ],
+  roles: []  // Specify any roles that this role inherits from here if necessary
+});
+----------------------------------------------
+db.dropUser("readonly")
+db.dropRole("readonly")
+db.getUser("readonly")
+  ---------------------------
+  db.updateUser("readonly",
+  {
+      roles: [
+          { role: "test", db: "admin" },
+      ]
+  })
+
+  db.createRole({
+    role: "listCollectionsRole",
+    privileges: [
+        {
+            resource: { cluster: true },
+            actions: [ "listDatabases" ]
+        },
+        {
+            resource: { db: "", collection: "" },
+            actions: [ "listCollections", "find" ]
+        }
+    ],
+    roles: []
+})
+----------------------------------
+db.createUser({
+  user: "readonly",
+  pwd: "kUf4FeaZQ3B9",
+  roles: [{ role: "readonly", db: "admin" }]
+})
