@@ -37,6 +37,21 @@ chmod: Changes the permissions of a file or directory. E.g., chmod 755 filename 
 chown: Changes the owner of a file. E.g., chown user:group filename.
 chgrp: Changes the group associated with a file. E.g., chgrp groupname filename.
 
+$ How do you manage log files in Linux? Explain how you would handle log rotation.
+Use logrotate for managing log files. It automatically rotates, compresses, and removes old log files based on configurations in /etc/logrotate.conf or /etc/logrotate.d/. You can define how often logs are rotated and how many backups to keep.
+
+$What is iptables, and how do you configure basic firewall rules?
+iptables is a user-space utility for configuring the Linux kernel firewall. Basic commands include:
+To allow traffic: iptables -A INPUT -p tcp --dport 22 -j ACCEPT (allows SSH).
+To deny traffic: iptables -A INPUT -j DROP (blocks all other traffic).
+
+$ How do you handle user access management on Linux servers? Explain the role of /etc/passwd and /etc/shadow.
+User management is done via commands like useradd, usermod, and userdel.
+/etc/passwd: Contains user account information, including username, user ID, group ID, home directory, and shell.
+/etc/shadow: Contains hashed passwords and account expiration details, accessible only by privileged users for security.
+
+$ What is cron, and how do you schedule jobs with it?
+cron is a time-based job scheduler in Unix-like operating systems. Jobs are defined in a crontab file (crontab -e), where you can specify the timing and commands to run, like 0 * * * * /path/to/script.sh to run a script every hour.
 
 $ Troubleshooting High CPU Usage:
 top -c                    # Real-time process view
