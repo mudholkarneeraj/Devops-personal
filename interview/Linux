@@ -20,3 +20,57 @@
 -tar -xvf my_archive.tar ==> to extract the tar file
 -zip <file_name> ==> to zip the file
 -unzip <file_name> ==> to unzip the file
+
+$ The Linux boot process involves several steps:
+BIOS/UEFI: When the system is powered on, BIOS/UEFI initializes hardware and loads the bootloader.
+Bootloader: The bootloader (like GRUB) is loaded, which presents a menu and loads the kernel.
+Kernel Initialization: The kernel initializes the system, sets up memory management, and detects hardware.
+Init Process: The kernel starts the init process (often systemd), which initializes user-space services.
+Runlevel Services: systemd or the init system starts the configured services based on the defined runlevel.
+
+$ What are inodes, and how do they relate to file storage in Linux?
+An inode is a data structure on a filesystem that stores information about a file or directory, including its size, owner, permissions, and pointers to the data blocks on disk. Each file has a unique inode number, allowing the filesystem to access it efficiently.
+
+$How do permissions work in Linux? Explain how to set and manage permissions with chmod, chown, and chgrp?
+Linux uses a permission model consisting of three types (read, write, execute) for three categories (owner, group, others).
+chmod: Changes the permissions of a file or directory. E.g., chmod 755 filename sets read, write, and execute for the owner, and read and execute for group and others.
+chown: Changes the owner of a file. E.g., chown user:group filename.
+chgrp: Changes the group associated with a file. E.g., chgrp groupname filename.
+
+
+$ Troubleshooting High CPU Usage:
+top -c                    # Real-time process view
+htop                      # Interactive process viewer
+ps aux | grep [process]   # Find specific process
+pidstat 1                 # CPU statistics per process
+sar -u 1 10              # CPU usage every 1 second, 10 times
+$ Network Troubleshooting:
+# Check connections
+netstat -tuln          # Open ports
+ss -tuln              # Alternative to netstat
+lsof -i               # List open files/ports
+
+# Network performance
+iftop                 # Network bandwidth
+tcpdump -i eth0       # Packet capture
+ping -c 4 hostname    # Basic connectivity
+traceroute hostname   # Route tracing
+$ Shell Scripting:
+
+"Write a script to find and delete files older than 30 days"
+"How would you automate system backups?"
+#!/bin/bash
+# Simple backup script
+BACKUP_DIR="/backup"
+SOURCE_DIR="/data"
+DATE=$(date +%Y%m%d)
+# Create backup directory
+mkdir -p $BACKUP_DIR/$DATE
+# Create backup
+tar -czf $BACKUP_DIR/$DATE/backup.tar.gz $SOURCE_DIR
+# Remove backups older than 30 days
+find $BACKUP_DIR/* -mtime +30 -exec rm -rf {} \;
+# Log backup completion
+echo "Backup completed on $(date)" >> /var/log/backup.log
+
+$ fstrim ==> discards unused blocks from a mounted filesystem
