@@ -174,3 +174,45 @@ Persistent Volume (PV):
 * PVs are resources in the cluster that represent physical or networked storage, such as a disk on a node or a network-attached storage device.
 * They exist independently of any particular Pod and are provisioned and managed outside of the Pod lifecycle.
 * PVs define access modes (e.g., ReadWriteOnce, ReadOnlyMany, ReadWriteMany) 
+========================================================================
+$ What is Kubernetes, and how does it differ from other orchestration tools like Docker Swarm?
+Answer: Kubernetes is an open-source container orchestration platform designed to automate deploying, scaling, and operating application containers. Unlike Docker Swarm, which is simpler and tightly integrated with Docker, Kubernetes offers a more extensive ecosystem, supporting various container runtimes and providing advanced features like auto-scaling, self-healing, and more robust networking capabilities.
+
+$ Explain the architecture of Kubernetes. What are the key components, and what roles do they play?
+Answer: The Kubernetes architecture consists of a control plane and nodes. The control plane manages the cluster and includes components like the API Server, Scheduler, Controller Manager, and etcd (for configuration data storage). Nodes run the containerized applications and include components like the Kubelet (manages Pods), Kube-Proxy (manages network rules), and a container runtime (like Docker).
+
+$ What is a Pod, and what are the differences between a Pod and a Container?
+Answer: A Pod is the smallest deployable unit in Kubernetes, representing a single instance of a running process in the cluster. It can contain one or more containers that share the same network namespace and storage volumes. A container is an isolated execution environment; in contrast, a Pod provides a higher level of abstraction, grouping related containers that need to communicate or share resources.
+
+$ What are ReplicaSets, and how do they differ from Deployments?
+Answer: A ReplicaSet ensures a specified number of pod replicas are running at all times. Deployments manage ReplicaSets and provide a declarative way to update applications. While a ReplicaSet only ensures the desired state of Pods, a Deployment also enables versioning and rolling updates.
+
+$ What is a StatefulSet, and when would you use it over a Deployment?
+Answer: A StatefulSet is used for managing stateful applications that require persistent storage and stable network identifiers. It ensures that pods are created in order, with unique, stable identities. It’s ideal for applications like databases, where consistent storage and identity are crucial.
+
+$ How does service discovery work in Kubernetes? What are ClusterIP, NodePort, and LoadBalancer types of services?
+Answer: Service discovery in Kubernetes enables Pods to communicate with each other. A ClusterIP service exposes a service on a cluster-internal IP, accessible only within the cluster. NodePort exposes the service on a static port on each node's IP, allowing external traffic to access it. A LoadBalancer service creates an external load balancer in supported cloud providers, providing a single entry point to access the service.
+
+$ What are Persistent Volumes (PVs) and Persistent Volume Claims (PVCs)? How do they relate to storage in Kubernetes?
+Answer: Persistent Volumes (PVs) are storage resources in the cluster, defined by administrators, while Persistent Volume Claims (PVCs) are requests for those storage resources made by users. PVCs bind to PVs based on specified storage requirements, enabling dynamic storage provisioning.
+
+$ Can you explain how Storage Classes work in Kubernetes? How would you configure dynamic provisioning of storage?
+Answer: Storage Classes provide a way to define different types of storage, enabling dynamic provisioning of PVs based on user requirements. You configure a Storage Class with parameters (e.g., storage type, replication factor), and users can request PVCs that specify the desired Storage Class for automatic PV provisioning.
+
+$What is ConfigMap and Secret in Kubernetes? How do you use them to manage application configurations?
+Answer: ConfigMap is used to store non-sensitive configuration data as key-value pairs, while Secrets store sensitive information (like passwords) in an encoded format. You can reference both in Pods to inject configuration data or secrets as environment variables or volumes, promoting separation of concerns.
+
+$ How can you manage environment variables for Pods in Kubernetes?
+Answer: Environment variables can be defined directly in Pod specifications or injected from ConfigMaps or Secrets. This allows for flexible configuration management without hardcoding values in container images.
+
+$ What are RBAC (Role-Based Access Control) and Network Policies? How do you implement them in Kubernetes?
+Answer: RBAC is a method for controlling access to resources based on user roles, allowing administrators to define permissions for users and groups. You implement RBAC by creating Roles (permissions for resources) and RoleBindings (assigning roles to users/groups). Network Policies control Pod traffic through rules defined in YAML files that specify ingress and egress permissions.
+
+$What are Custom Resource Definitions (CRDs), and how do they extend Kubernetes capabilities?
+Answer: CRDs allow users to define their own resource types in Kubernetes, extending its API capabilities. They enable the creation of custom applications that can be managed just like native Kubernetes resources, promoting flexibility and extensibility.
+
+$ What is the role of the Kubernetes API server, and how does it interact with other components?
+Answer: The API server is the central management component of Kubernetes, serving as the primary interface for users and other components to interact with the cluster. It processes RESTful requests, validates them, and updates the etcd database. Other components (like controllers and schedulers) communicate through the API server to retrieve or modify cluster state.
+
+$ Can you describe a challenging Kubernetes issue you faced in your previous role and how you resolved it?
+Answer: One challenging issue involved a sudden increase in traffic causing Pods to become overloaded and crash. To resolve this, I analyzed resource limits and requests, adjusted the Horizontal Pod Autoscaler configuration, and implemented better monitoring to track resource usage. This ensured that the application could scale dynamically to meet demand
