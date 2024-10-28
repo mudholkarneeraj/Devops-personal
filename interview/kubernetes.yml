@@ -1,6 +1,9 @@
 ———————————————————————————————————————————————————————————
 Kubernetes
 ———————————————————————————————————————————————————————————- ==>
+Kubernetes Operator: Operators are software extensions that use custom resources to manage applications and their components
+K8s Operators are controllers for packaging, managing, and deploying applications on Kubernetes.
+
 StatefulSets:
 * StatefulSets are used for managing stateful applications, where each pod in the set has a unique, persistent identity.
 * They are commonly used for applications that require stable network identities or persistent storage, such as databases.
