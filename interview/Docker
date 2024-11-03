@@ -1,5 +1,6 @@
 $ What is Docker, and how does it differ from traditional virtualization?
 Answer: Docker is a platform that enables developers to automate the deployment of applications in lightweight, portable containers. Unlike traditional virtualization, which runs multiple operating systems on a single physical machine (using a hypervisor), Docker containers share the host OS kernel. This makes Docker containers more lightweight, faster to start, and more efficient in resource usage compared to virtual machines.
+ans in interview: Docker is a platform that allows developers to package applications and their dependencies into lightweight, portable containers that can run consistently on any environment—whether it's a developer's laptop, a test server, or a production server in the cloud.
 
 $ Can you explain the Docker architecture, including the roles of Docker Daemon, Docker Client, and Docker Registry?
 Docker Daemon: The core component that runs on the host machine, managing Docker containers, images, networks, and volumes. It listens for API requests and handles container lifecycle management.
