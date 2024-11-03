@@ -5,7 +5,7 @@ SCRIPT
 -Compiler scans the whole program and converts it into machine code.
 -Shell is a program and command line interpreter. It is an interface between user and kernel.
 —/bin/bash is the default login shell. Using the command  “chsh” we can change the default shell.
--	•	Zombie: The process has stopped but it is still active in process table
+-zombie process: is a process that has completed its execution (either normally or via termination) but still has an entry in the process table. This happens because the process's parent hasn’t yet read its exit status
 -BASH commands are case sensitive but DOS commands are not case sensitive.
 -Head command is used for display started 10 lines
 -Tail command is used for display started 10 lines
