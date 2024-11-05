@@ -1,1 +1,13 @@
-hi
+---Prometheus&Grafana---
+Prometheus: Prometheus is a monitoring and alerting stack, it works on TSDB(timeseries database)
+promQL: The dedicated querying language used by Prometheus to perform calculations
+grafana: grafana provides the meaningfull data of prometheus to be visualisation
+Service Discovery: With the help of Service discovery the services are identified which are need to scraped.
+nodeExporter: it is use to collect the metrics of the system
+Federation: Federation enables multiple Prometheus servers to work together in a hierarchical manner
+Chunks: Chunks are compressed blocks of data that contain a range of samples for a specific time-series.
+WAL (Write-Ahead Log): The WAL captures incoming samples before they are written to the main storage, providing a reliable mechanism to recover data in the event of a crash or restart.
+https://devopscube.com/prometheus-architecture/
+
+
+------------kubernetes----------
