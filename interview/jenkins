@@ -1,0 +1,18 @@
+What is Jenkins?
+ans: Jenkins is an open-source automation tool, which is used for CI/CD 
+
+difference between freestyle job and pipeling job
+ans:Freestyle jobs are the older form of Jenkins jobs, with limited configuration and flexibility. Pipelines, however, allow jobs to be defined in code (using Jenkinsfile), support complex workflows, and are more scalable for CI/CD practices.
+
+Jenkins jobs can be triggered manually or automatically using various methods:
+  Poll SCM: Periodically checks for changes in the source code repository.
+  Webhooks: Automatically triggers builds when code is pushed to the repository.
+  Cron: Runs the job based on a schedule.
+  Build Triggers: Allows one job to start other jobs when they finish.
+
+How do you configure Jenkins to pull code from a Git repository?
+In the job configuration, you select Git as the source code management (SCM) option and enter the repository URL and branch.
+
+How would you set up and manage a Jenkins master-agent architecture?
+
+Jenkins master-agent architecture allows distributing workloads to multiple agents, reducing the load on the Jenkins master. Configure agents on separate nodes, connect them to the master, and configure jobs to use specific agents or labels.
