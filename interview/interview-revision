@@ -1,5 +1,5 @@
 ---Prometheus&Grafana---
-Prometheus: Prometheus is a monitoring and alerting stack, it works on TSDB(timeseries database)
+Prometheus: Prometheus is a monitoring and alerting stack, it works on TSDB(timeseries database), Prometheus pulls the metrics
 promQL: The dedicated querying language used by Prometheus to perform calculations
 grafana: grafana provides the meaningfull data of prometheus to be visualisation
 Service Discovery: With the help of Service discovery the services are identified which are need to scraped.
