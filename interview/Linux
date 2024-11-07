@@ -4,7 +4,7 @@ ports
 
 
 =================================
-
+$ find /path/to/search -type f -size +100M ==> to get 100mb files
 -Ps ux command user for find status of process.
 -Free command is useful for checking memory status.
 -To debug a shell script we execute the script with the “-x” or “-nv”  option.
