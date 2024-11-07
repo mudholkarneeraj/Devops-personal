@@ -1,0 +1,7 @@
+python --version
+source .venv/bin/activate
+sudo apt install python3.11
+sudo apt-get install python3.11-venv
+source .venv_3.11/bin/activate
+.venv_3.11/bin/pip3.11 install black==23.1.0
+pip freeze | grep "black"
