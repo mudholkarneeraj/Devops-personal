@@ -11,6 +11,8 @@ https://devopscube.com/prometheus-architecture/
 
 
 ------------kubernetes----------
+kube-proxy: maintaining service rules for service to pod mapping, allowing communication to & from kubernetes cluster, kube-proxy acts as a L3 & L4 layer, loadbalancer
+CNI: 
 
 ------------other---------------
 TCP AND UDP: tcp and udp are used for transmission of data over the internet, while both belongs to transport layer of the osi model
