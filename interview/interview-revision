@@ -18,3 +18,19 @@ CNI:
 TCP AND UDP: tcp and udp are used for transmission of data over the internet, while both belongs to transport layer of the osi model
 1) TCP: tcp is a connection orinted protocall , it ensures the data packets are delivered in the correct order and with out error, it is slower data transmission
 2) UDP: udp is a connection less protocall, it simply sends the data packets to the destination without verfiying, it is faster that tcp, commonly used for fast and low-latency connections like online gaming & video steming
+
+
+--------------AWS---------------
+ALB: 
+Operates at Layer 7 (Application Layer) of the OSI model. It routes traffic based on application-level information
+Supports advanced routing features like host-based and path-based routing
+used Ideal for HTTP/HTTPS applications, web applications, microservices architectures
+Supports HTTP, HTTPS, and WebSocket protocols
+Can handle a high volume of application-layer traffic and supports autoscaling based on application demand, but typically has slightly higher latency due to Layer 7 processing.
+Offers support for security features like AWS Web Application Firewall (WAF) and user authentication via Amazon Cognito.
+NLB:
+Operates at Layer 4 (Transport Layer) of the OSI model. It routes traffic based on IP protocol data
+
+
+-------------script-------------
+shell: It is an interface between user and kernel.
