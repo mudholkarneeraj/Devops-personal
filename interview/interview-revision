@@ -11,3 +11,8 @@ https://devopscube.com/prometheus-architecture/
 
 
 ------------kubernetes----------
+
+------------other---------------
+TCP AND UDP: tcp and udp are used for transmission of data over the internet, while both belongs to transport layer of the osi model
+1) TCP: tcp is a connection orinted protocall , it ensures the data packets are delivered in the correct order and with out error, it is slower data transmission
+2) UDP: udp is a connection less protocall, it simply sends the data packets to the destination without verfiying, it is faster that tcp, commonly used for fast and low-latency connections like online gaming & video steming
