@@ -34,6 +34,20 @@ Suitable for TCP/UDP applications, high-performance, low-latency applications
 Supports static IPs and Elastic IPs, allowing each Availability Zone to have a static IP that doesn’t change, which is advantageous for whitelisting IPs or using fixed IPs.
 Does not support WAF
 
+• Example: if CIDR block 10.0.0.0/24, then reserved IP addresses are: 
+        • 10.0.0.0 – Network Address
+        • 10.0.0.1 – reserved by AWS for the VPC router
+        • 10.0.0.2 – reserved by AWS for mapping to Amazon-provided DNS
+        • 10.0.0.3 – reserved by AWS for future use
+        • 10.0.0.255 – Network Broadcast Address.AWS does not support broadcast in aVPC, therefore the address is reserved
+    
+S3 Storage Classes: 
+        • Amazon S3 Standard - General Purpose
+        • Amazon S3 Standard-Infrequent Access (IA) 
+        • Amazon S3 Glacier Instant Retrieval
+        • Amazon S3 Glacier Flexible Retrieval
+        • Amazon S3 Glacier Deep Archive:
+        • Amazon S3 Intelligent Tiering
 
 -------------script-------------
 shell: It is an interface between user and kernel.
