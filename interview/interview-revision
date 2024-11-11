@@ -30,6 +30,9 @@ Can handle a high volume of application-layer traffic and supports autoscaling b
 Offers support for security features like AWS Web Application Firewall (WAF) and user authentication via Amazon Cognito.
 NLB:
 Operates at Layer 4 (Transport Layer) of the OSI model. It routes traffic based on IP protocol data
+Suitable for TCP/UDP applications, high-performance, low-latency applications
+Supports static IPs and Elastic IPs, allowing each Availability Zone to have a static IP that doesn’t change, which is advantageous for whitelisting IPs or using fixed IPs.
+Does not support WAF
 
 
 -------------script-------------
