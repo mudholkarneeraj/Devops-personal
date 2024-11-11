@@ -59,3 +59,35 @@ Use the shell module when you need to use shell-specific syntax, variables, or c
       debug:
         msg: "This task will always run"
 -------------------------------
+---
+- name: Playbook for deploy components after EKS cluster created
+  hosts: jenkins
+  become: false
+  remote_user: ubuntu
+  roles:
+    - AWSLoadBalancerController
+-------------------------------
+
+[jenkins]
+172.31.47.188
+172.31.38.222
+172.31.34.169
+172.31.33.6
+172.31.3.157
+172.31.5.158
+172.31.55.11
+172.31.55.152
+172.31.55.21
+172.31.55.117
+172.31.16.158
+172.31.30.239
+172.31.7.23
+172.31.55.125
+172.31.75.173
+172.31.1.107
+172.31.82.46
+172.31.82.218
+172.31.13.133
+[all:vars]
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+#ansible_python_interpreter='/usr/bin/python3'
