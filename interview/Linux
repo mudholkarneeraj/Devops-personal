@@ -2,7 +2,9 @@ mis
 ===========
 Physical Memory (RAM) is the actual physical hardware that stores data and program instructions that the CPU needs quickly.
 Swap Memory is a space on the hard drive or SSD that the OS uses when the physical RAM is full.
-
+Why is swap memory used if it’s slower than RAM?
+ans: Swap provides a backup when physical RAM is fully used, allowing the system to handle more data than it would otherwise.
+========
 ports
 =========
 
@@ -10,25 +12,25 @@ ports
 
 =================================
 $ find /path/to/search -type f -size +100M ==> to get 100mb files
--Ps ux command user for find status of process.
--Free command is useful for checking memory status.
--To debug a shell script we execute the script with the “-x” or “-nv”  option.
--$! Shows process id of the process that recently went into background 
--$$  gives the process id of the currently executing process
--“finger” command shows all information of users.
--Crontab stands for cron table because it uses the job scheduler cron to execute tasks. The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. 
--to open in readonly mode vi –R <Filename>
--uptime 
--ssh username@serverIP -p sshport 
--mysql –S serverName –U username –P password
--set the default permission to all users on every file which is created in the current shell umask 777
--insert a line “ABCD” at every 50th line of a file sed  '50i\ABCD' filename 
--find the total disk space used by a specific user du -s /home/username 
--How to print the login names of all users on a system /etc/shadow file has all the users listed.  awk –F ':' '{print $1}' /etc/shadow|uniq –u
--tar -czvf my_archive.tar test1.txt test2.txt test3.txt ==> to create the tar file
--tar -xvf my_archive.tar ==> to extract the tar file
--zip <file_name> ==> to zip the file
--unzip <file_name> ==> to unzip the file
+- Ps ux command user for find status of process.
+- Free command is useful for checking memory status.
+- To debug a shell script we execute the script with the “-x” or “-nv”  option.
+- $! Shows process id of the process that recently went into background 
+- $$  gives the process id of the currently executing process
+- “finger” command shows all information of users.
+- Crontab stands for cron table because it uses the job scheduler cron to execute tasks. The crontab is a list of commands that you want to run on a regular schedule, and also the name of the command used to manage that list. 
+- to open in readonly mode vi –R <Filename>
+- uptime 
+- ssh username@serverIP -p sshport 
+- mysql –S serverName –U username –P password
+- set the default permission to all users on every file which is created in the current shell umask 777
+- insert a line “ABCD” at every 50th line of a file sed  '50i\ABCD' filename 
+- find the total disk space used by a specific user du -s /home/username 
+- How to print the login names of all users on a system /etc/shadow file has all the users listed.  awk –F ':' '{print $1}' /etc/shadow|uniq –u
+- tar -czvf my_archive.tar test1.txt test2.txt test3.txt ==> to create the tar file
+- tar -xvf my_archive.tar ==> to extract the tar file
+- zip <file_name> ==> to zip the file
+- unzip <file_name> ==> to unzip the file
 
 $ The Linux boot process involves several steps:
 BIOS/UEFI: When the system is powered on, BIOS/UEFI initializes hardware and loads the bootloader.
