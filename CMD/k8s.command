@@ -8,3 +8,4 @@ $ kubectl run -n staging -i --tty load-generator-3 --rm --image=busybox:1.28 --r
 kubectl get pods -n prod -l app=shopnek -o jsonpath='{.items[*].metadata.name}' | tr ' ' '\n' | xargs -I {} sh -c 'echo "Pod: {}" && kubectl logs -n prod {} | grep -i "with non-plain text contents is unsupported by type to select for accessibility"' ==> to check log in specific deployment
 kubectl get nodes -o jsonpath="{range .items[*]}{.status.capacity.cpu}{'\n'}{end}" | awk '{s+=$1} END {print s}' ==> to count the cpu
 kubectl get ing -A | awk '{print $1, $4}'
+kubectl exec -n prod-replica api-deployment-5df56ffc97-dcz2j -- cat /tmp/heapdump.hprof > ./heapdump.hprof
