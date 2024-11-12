@@ -48,6 +48,20 @@ S3 Storage Classes:
         • Amazon S3 Glacier Flexible Retrieval
         • Amazon S3 Glacier Deep Archive:
         • Amazon S3 Intelligent Tiering
+eks:
+Kubernetes-based, open-source.
+Multi-cloud compatible.
+Advanced Kubernetes networking.
+Higher learning curve; more customizable.
+Extra control plane cost.
+
+ecs:
+AWS-native, simpler, proprietary.
+ Best within AWS ecosystem.
+Simple AWS VPC integration.
+Easier to use; less customization.
+No control plane cost; only pay for compute.
+Simple, AWS-integrated applications.
 
 -------------script-------------
 shell: It is an interface between user and kernel.
