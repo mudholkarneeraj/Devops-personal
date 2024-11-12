@@ -1,6 +1,12 @@
 ———————————————————————————————————————————————————————————
 Kubernetes
 ———————————————————————————————————————————————————————————- ==>
+ServiceAccount: Identity for processes (pods) to interact with the API.
+Role: Defines permissions in a specific namespace.
+ClusterRole: Defines cluster-wide permissions.
+RoleBinding: Grants a Role to a user or service account in a namespace.
+ClusterRoleBinding: Grants a ClusterRole to a user or service account across the entire cluster.
+
 Admission Webhook: An Admission Webhook in Kubernetes is a mechanism that intercepts API requests (like creating or updating resources) before they are persisted in the cluster. There are two types:
 
 Mutating Webhooks: Modify the request (e.g., add labels, sidecars, or default values).
