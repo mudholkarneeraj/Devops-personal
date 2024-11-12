@@ -12,7 +12,7 @@ https://devopscube.com/prometheus-architecture/
 
 ------------kubernetes----------
 kube-proxy: maintaining service rules for service to pod mapping, allowing communication to & from kubernetes cluster, kube-proxy acts as a L3 & L4 layer, loadbalancer
-CNI: 
+CNI: When a pod is created, the CNI plugin assigns an IP address to the pod and configures necessary routes and network policies. The Kubernetes kubelet uses CNI plugins to handle networking for each pod.
 
 ------------other---------------
 TCP AND UDP: tcp and udp are used for transmission of data over the internet, while both belongs to transport layer of the osi model
