@@ -1,6 +1,10 @@
 ———————————————————————————————————————————————————————————
 Kubernetes
 ———————————————————————————————————————————————————————————- ==>
+Admission Webhook: An Admission Webhook in Kubernetes is a mechanism that intercepts API requests (like creating or updating resources) before they are persisted in the cluster. There are two types:
+
+Mutating Webhooks: Modify the request (e.g., add labels, sidecars, or default values).
+Validating Webhooks: Validate the request and approve or reject it based on custom rules.
 Kubernetes Operator: Operators are software extensions that use custom resources to manage applications and their components
 K8s Operators are controllers for packaging, managing, and deploying applications on Kubernetes.
 
