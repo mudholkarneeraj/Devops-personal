@@ -1,8 +1,7 @@
-Hello, my name is Neeraj. I hold a B.Tech from Vasantrao Naik University, and my hometown is Mudhole. I have over 4.5 years of experience in DevOps and currently work as a Senior DevOps Engineer at Changejar. Prior to this, I worked with ClearTax and Xpedise.
+Hello, my name is Neeraj. iam from hyderabad, and  I have over 4.5 years of experience in DevOps and currently work as a Senior DevOps Engineer at Changejar. Prior to this, I worked with ClearTax and Xpedize.
 
-Tools and Technologies
-----------------------
-Throughout my career, I’ve worked with a range of DevOps tools and technologies. I’ve built Kubernetes clusters from scratch, hosted and managed tools like Jenkins, Uptime Kuma, SonarQube, Nexus, and Ansible. I’ve also managed website hosting and AWS infrastructure creation.
+comming to the  Tools and Technologies, that i have worked on,
+I’ve built Kubernetes clusters from scratch, hosted and managed tools like Jenkins, Uptime Kuma, SonarQube, Nexus, and Ansible. I’ve also managed website hosting and AWS infrastructure creation.
 
 Here are some of the tools I’ve used extensively:
 Infrastructure as Code (IaC): Terraform, Helm
