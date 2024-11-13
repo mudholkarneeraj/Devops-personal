@@ -9,10 +9,20 @@ Jenkins jobs can be triggered manually or automatically using various methods:
   Webhooks: Automatically triggers builds when code is pushed to the repository.
   Cron: Runs the job based on a schedule.
   Build Triggers: Allows one job to start other jobs when they finish.
+triggering job remotly: http://user:gNouIkl2ca1t@54.226.181.123/job/RemoteTriggerExample/build?token=abc-123
+Generic Webhook Trigger:
+Build periodically:
+Poll SCM:
+Build after other projects are built:
+
 
 How do you configure Jenkins to pull code from a Git repository?
 In the job configuration, you select Git as the source code management (SCM) option and enter the repository URL and branch.
 
 How would you set up and manage a Jenkins master-agent architecture?
-
 Jenkins master-agent architecture allows distributing workloads to multiple agents, reducing the load on the Jenkins master. Configure agents on separate nodes, connect them to the master, and configure jobs to use specific agents or labels.
+
+crediential plugin: stores the secrete password
+purpose of jenkinsfiles: 
+
+roleBackAuthurization(RBAC):we can specific permission for user
