@@ -229,3 +229,58 @@ Answer: The API server is the central management component of Kubernetes, servin
 
 $ Can you describe a challenging Kubernetes issue you faced in your previous role and how you resolved it?
 Answer: One challenging issue involved a sudden increase in traffic causing Pods to become overloaded and crash. To resolve this, I analyzed resource limits and requests, adjusted the Horizontal Pod Autoscaler configuration, and implemented better monitoring to track resource usage. This ensured that the application could scale dynamically to meet demand
+
+Pod Affinity: Pod affinity allows you to specify rules about placing a pod relative to other pods.
+RequiredDuringSchedulingIgnoredDuringExecution: Pods must be placed according to the rules. If no suitable node is found, the pod won't be scheduled.
+PreferredDuringSchedulingIgnoredDuringExecution: Pods should ideally follow the rules, but it's not mandatory.
+affinity:
+  podAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchExpressions:
+            - key: app
+              operator: In
+              values:
+                - frontend
+        topologyKey: "kubernetes.io/hostname"
+
+  Node Affinity: Node affinity is used to control the node selection for pods. It specifies which nodes the pods should or should not run on, based on labels on the nodes.
+  affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: disktype
+              operator: In
+              values:
+                - ssd
+Topology Spread Constraints: Topology spread constraints ensure pods are evenly distributed across failure domains, such as zones or nodes. This helps improve availability and fault tolerance.
+
+topologySpreadConstraints:
+  - maxSkew: 1
+    topologyKey: "kubernetes.io/zone"
+    whenUnsatisfiable: DoNotSchedule
+    labelSelector:
+      matchLabels:
+        app: my-app
+
+        
+Pod Anti-Affinity: Pod anti-affinity prevents pods from being scheduled close to other pods with specific labels.
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchLabels:
+            app: my-app
+        topologyKey: "kubernetes.io/hostname"
+
+Node Anti-Affinity: Node anti-affinity specifies that pods should not run on specific nodes based on node labels.
+affinity:
+  nodeAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: env
+              operator: NotIn
+              values:
+                - production
