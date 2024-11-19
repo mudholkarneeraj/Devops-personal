@@ -36,7 +36,8 @@ sudo xfs_growfs -d
 sudo xfs_growfs /dev/nvme1n1 
 ./restart-instance.sh > /dev/null 2>&1 &
 ./restart-instance.sh > /dev/null 2>&1
-grep -r "<text>" /var/lib/text.txt
+grep -r "<text>" /var/lib ==> If You Need to Search Recursively in files
+grep "<text>" /var/lib/txt.txt ==> If You Need to Search Recursively in file
 -------------certboat--------
 sudo certbot certonly --manual -d *.dev.myjar.app -d dev.myjar.app --agree-tos --no-bootstrap --manual-public-ip-logging-ok --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory
 ——————————MAC-RESIZE-----------
