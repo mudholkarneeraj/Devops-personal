@@ -1,6 +1,6 @@
 1. sudo apt-get install cron
     systemctl status cron
-    crontab -e  #==> 
+    crontab -e  #==> for edit mode
     crontab -l  #==> list
 2. glances ==> to measure the network socket
 3.  atq   ==> to check running scripts in jenkins
