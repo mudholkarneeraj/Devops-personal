@@ -63,5 +63,32 @@ Easier to use; less customization.
 No control plane cost; only pay for compute.
 Simple, AWS-integrated applications.
 
+complete trafic flow:
+1)External request hits Nginx Ingress Controller
+  Client → LoadBalancer → Nginx Ingress Pod
+
+2)DNS Resolution
+  Nginx Pod → CoreDNS lookup for backend service
+  CoreDNS → Returns service cluster IP
+
+3)Service Access
+  Nginx → Service Cluster IP
+  kube-proxy rules → Redirect to Pod IP
+  CNI → Routes packet to correct node/pod
+
+----
+External Traffic → Nginx Ingress Controller Pod
+↓
+Nginx reads Ingress rules
+↓
+Forwards to appropriate Service (using kube-proxy)
+↓
+Service forwards to Pod (using iptables/IPVS rules)
+↓
+Pod receives traffic
+
+
+Would you like me to elaborate on any specific component or explain a particular traffic flow scenario in more detail?
+
 -------------script-------------
 shell: It is an interface between user and kernel.
