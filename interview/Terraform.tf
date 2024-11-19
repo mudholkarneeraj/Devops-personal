@@ -20,3 +20,5 @@ $ Using tools like terraform validate and terraform plan for syntax and dependen
 $ Managing S3 buckets with Terraform:
 Configure aws_s3_bucket with versioning and lifecycle rules to manage data retention and costs. aws_s3_bucket_policy allows fine-grained access control.
 
+terraform local:
+In Terraform, locals are used to define and manage reusable expressions or values within a configuration. These local values are evaluated once per configuration, and their purpose is to improve readability, reduce repetition, and simplify complex expressions.
