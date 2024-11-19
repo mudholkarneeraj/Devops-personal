@@ -1,7 +1,7 @@
 1. sudo apt-get install cron
     systemctl status cron
-    crontab -e
-    crontab -l
+    crontab -e  #==> 
+    crontab -l  #==> list
 2. glances ==> to measure the network socket
 3.  atq   ==> to check running scripts in jenkins
     at -c <job_id>. ==> to check
@@ -21,6 +21,8 @@ sudo userdel <username> ==> Deleting the user
 sudo groupadd <groupname> ==> Adding a new group
 sudo groupdel <groupname> ==> Deleting the  group
 sudo usermod -g <groupname> <username> ==> Adding a user to a primary group
+sudo usermod –a –G group_name user_name ==> adding user in group
+sudo usermod -aG docker $USER ==> adding user in group
 2. sudo deluser --remove-home user ==> user directory also deleted 
 3. du -h -t 100M /  ==> to check file size
 4. gdu ==> to check the discspace
