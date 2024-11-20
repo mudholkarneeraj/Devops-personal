@@ -1,6 +1,7 @@
 ———————————————————————————————————————————————————————————
 Kubernetes
 ———————————————————————————————————————————————————————————- ==>
+headless service in Kubernetes: allows clients to connect directly to pods, instead of going through a proxy
 ServiceAccount: Identity for processes (pods) to interact with the API.
 Role: Defines permissions in a specific namespace.
 ClusterRole: Defines cluster-wide permissions.
