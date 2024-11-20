@@ -169,7 +169,8 @@ spec:
         type: Utilization
         averageUtilization: 50
 
-===================================================== Liveness Probe:
+=====================================================
+Liveness Probe:
 * A liveness probe determines whether a container is running and healthy. If the liveness probe fails, Kubernetes restarts the container.
 * It is used to ensure that the application is responsive and functioning correctly during its lifecycle.
 Readiness Probe:
