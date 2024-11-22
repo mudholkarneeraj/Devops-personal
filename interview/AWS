@@ -23,3 +23,10 @@ AWS
     * Originally designed for non-critical, reproducible data.
     * Deprecated, and users are encouraged to use the Standard storage class or Intelligent-Tiering instead.
 ==> EC2 enables users to run virtual servers, known as instances, on-demand
+
+----------------------------vpc-peering-------------------------------
+vpc1-->subnet1-->internetgateway-->routetable-->associate subnet and internetgateway-->ec2-instance1
+vpc2-->subnet2-->internetgateway-->routetable-->associate subnet and internetgateway-->ec2-instance2
+vpc-pering
+configure vpc1 and vp2 --> edit routetable and give cidr range, it should connect to vpc-peering
+---------------------------vpc-transist-gateway-----------------------
