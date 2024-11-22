@@ -30,3 +30,6 @@ vpc2-->subnet2-->internetgateway-->routetable-->associate subnet and internetgat
 vpc-pering
 configure vpc1 and vp2 --> edit routetable and give cidr range, it should connect to vpc-peering
 ---------------------------vpc-transist-gateway-----------------------
+with the help of transit gateway, we can connect multiple VPC's
+
+-------------------------------------
