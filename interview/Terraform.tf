@@ -22,3 +22,6 @@ Configure aws_s3_bucket with versioning and lifecycle rules to manage data reten
 
 terraform local:
 In Terraform, locals are used to define and manage reusable expressions or values within a configuration. These local values are evaluated once per configuration, and their purpose is to improve readability, reduce repetition, and simplify complex expressions.
+
+1. What is the purpose of the Terraform lock file?
+Answer: The terraform.lock.hcl file ensures that Terraform uses the same version of provider plugins every time it runs, creating a consistent and predictable deployment experience. It records checksums and version details for providers to avoid unexpected changes caused by updates or different provider versions.
