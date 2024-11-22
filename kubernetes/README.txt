@@ -22,3 +22,9 @@ kube-proxy uses iptables rules to route to pod
 CNI handles actual packet routing to pod
 If DNS resolution is needed, CoreDNS handles it
 
+kubelet:
+kubelet is the primary "node agent" that runs on each node, It can register the node with the apiserver using one of: the hostname
+kubelet works in terms of a PodSpec,ensures that the containers described in those PodSpecs are running and healthy
+1.Resource allocation and real-time constraints
+2.Reliability and safety-critical operations
+3.Management and monitoring
