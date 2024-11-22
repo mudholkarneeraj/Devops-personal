@@ -11,3 +11,14 @@ As for requests, CFS operates on a level of Cgroups. For each Cgroup limits are 
 
 cpu.cfs_quota_us — CPU time in microseconds available to cgroup in a period, computed from Limits value.
 cpu.cfs_period_us — accounting period in microseconds after which allocatable resources are refilled, by default is 100 ms.
+
+
+-------------Traffic Flow:--------------
+
+Client makes request → NGINX Ingress Controller
+Ingress controller routes to appropriate Service
+Service sends traffic to kube-proxy
+kube-proxy uses iptables rules to route to pod
+CNI handles actual packet routing to pod
+If DNS resolution is needed, CoreDNS handles it
+
