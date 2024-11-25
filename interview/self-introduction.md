@@ -10,3 +10,7 @@ AWS Services: Creating VPCs, subnets, route tables, NAT gateways, and deploying 
 Monitoring and Logging: Prometheus, Grafana, Loki, Node Exporter, Mimir, Elasticsearch, Kibana, Fluent Bit, Filebeat
 Security and Configuration Management: Vault, Istio
 I also worked on the SafeJar project, where I set up essential AWS infrastructure, including VPCs, subnets, route tables, NAT gateways, and services like Jenkins, Elasticsearch, Kibana, and Filebeat.
+
+
+why you want to change the company?
+“I’ve enjoyed my time at my current company, but I’m seeking a new challenge that will allow me to stretch my skills and experience. I feel that the role I’m applying for here aligns more closely with the type of challenges I’m eager to take on, and I’m excited about the opportunity to contribute to your team in meaningful ways.”
