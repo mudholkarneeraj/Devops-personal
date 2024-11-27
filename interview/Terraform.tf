@@ -25,3 +25,5 @@ In Terraform, locals are used to define and manage reusable expressions or value
 
 1. What is the purpose of the Terraform lock file?
 Answer: The terraform.lock.hcl file ensures that Terraform uses the same version of provider plugins every time it runs, creating a consistent and predictable deployment experience. It records checksums and version details for providers to avoid unexpected changes caused by updates or different provider versions.
+
+In Terraform, the taint command is used to manually mark a resource as "tainted." This means that the resource will be marked for destruction and re-creation the next time you run terraform apply. It's useful when you want to force a resource to be recreated due to an issue or change that isn't automatically detected by Terraform.
