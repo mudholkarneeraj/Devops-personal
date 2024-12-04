@@ -9,3 +9,4 @@ kubectl get pods -n prod -l app=shopnek -o jsonpath='{.items[*].metadata.name}' 
 kubectl get nodes -o jsonpath="{range .items[*]}{.status.capacity.cpu}{'\n'}{end}" | awk '{s+=$1} END {print s}' ==> to count the cpu
 kubectl get ing -A | awk '{print $1, $4}'
 kubectl exec -n prod-replica api-deployment-5df56ffc97-dcz2j -- cat /tmp/heapdump.hprof > ./heapdump.hprof
+kubectl exec nginx-deployment --cat /etc/config/credientials
