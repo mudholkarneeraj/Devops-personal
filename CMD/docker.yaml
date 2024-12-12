@@ -4,3 +4,4 @@ sudo docker rmi $(sudo docker images -f "dangling=true" -q) --force
 
 ---------dockerfile-------------
 docker build  -f Dockerfile -t make .
+docker builder prune -a ==> we can clean docker cache (failed to solve: failed to compute cache key: unlazy requires an applier)
